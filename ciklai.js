@@ -26,10 +26,6 @@ for(let a=4; a>=0; a--){
 // 7.console.log’e, naudojant ciklą penkiose eilutėse atspausdinti skirtingus atsitiktinius skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje);
 for (var i = 0; i < 5; i++) {
     var count = 0;
-    // for (var j = 0; j < Math.floor(Math.random() * 10)+1; j++) {
-    //   console.log(j)
-    //     count++;
-    // }
     console.log(Math.floor(Math.random() * 10)+1)
   }
     console.log("8---------");
@@ -42,16 +38,71 @@ while(x !== number){
 }
 console.log("9---------");
 // 9.console.log’e, naudojant ciklą atspausdinti atsitiktinius skirtingus skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklas turi pasibaigti tada, kai atsitiktinių skaičių suma viršija 100;
-// function getRandomNumberBetween(min,max){  ()
-//   return Math.floor(Math.random()*(max-min+1)+min);
-  
-// }
-console.log(getRandomNumberBetween(1,10))
+var sum =0;
+while(sum< 100){
+let x = Math.floor((Math.random() * 10) + 1);
+ sum= sum + x;
+  console.log(x);
+}
  console.log("10---------");
 // 10.console.log’e, naudojant ciklą atspausdinti skirtingus atsitiktinius skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Paskutinis atspausdintas skaičius turi būti 5 arba 7; Suskaičiuoti kiek ciklų prasisuko;
+var number1 = 5;
+var number2 = 7;
+count=0;
+var x = 0;
+while(x !== number2 && x !== number1 ){
+  x = Math.floor((Math.random() * 10) + 1);
+  count++;
+  console.log(count, x);
+}
+console.log("11---------");
 // 11. console.log’e, naudojant ciklą atspausdinti atsitiktinius skirtingus skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklas turi pasibaigti tada, kai atsitiktinių skaičių suma viršija 20, bet ne anksčiau nei po 11 ciklų;
-// 12. console.log’e, naudojant ciklą atspausdinti skirtingus atsitiktinius skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklą kartoti kol bus sugeneruoti trys nelyginiai skaičiai;
-// 13.console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Ciklą kartoti tol, kol neiškris abu vienodi skaičiai;
-// 14.console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Skaičiuoti abiejų skaičių sumas skirtinguose kintamuosiuose. Ciklą kartoti tol, kol kiekviena iš sumų bus daugiau nei 100;
-// 15.console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Ciklą kartoti kol bus sugeneruota po tris arba daugiau nelyginių skaičių.
+var sum = 0;
+count=0;
+var x = 0;
+while(count !== 11 || sum<20 ){
+  x = Math.floor((Math.random() * 10) + 1);
+  sum= sum + x;
+  count++;
+  console.log(count, x);
+}
+console.log(sum)
+console.log("12---------");
 
+// 12. console.log’e, naudojant ciklą atspausdinti skirtingus atsitiktinius skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklą kartoti kol bus sugeneruoti trys nelyginiai skaičiai;
+
+var x = 0;
+ while (x%2 ===0){
+  x = Math.floor((Math.random() * 10) + 1);
+  console.log(x);
+}
+console.log("13---------");
+// 13.console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Ciklą kartoti tol, kol neiškris abu vienodi skaičiai;
+var x=0;
+var y=0;
+while (x===y){
+   x = Math.floor((Math.random() * 10) + 1);
+   y = Math.floor((Math.random() * 10) + 1);
+  console.log(x, y);
+  }
+console.log("14---------");
+// 14.console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Skaičiuoti abiejų skaičių sumas skirtinguose kintamuosiuose. Ciklą kartoti tol, kol kiekviena iš sumų bus daugiau nei 100;
+var sum1 =0;
+var sum2 =0;
+while(sum1< 100 || sum2< 100 ){
+let x = Math.floor((Math.random() * 10) + 1);
+let y = Math.floor((Math.random() * 10) + 1);
+ sum1= sum1 + x;
+ sum2= sum2 + y;
+  console.log(x, y);
+}
+console.log(sum1, sum2)
+console.log("15---------");
+// 15.console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Ciklą kartoti kol bus sugeneruota po tris arba daugiau nelyginių skaičių.
+var x = 0;
+var y =0;
+ while (x%2 ===0 || y%2 ===0){
+  x = Math.floor((Math.random() * 10) + 1);
+  y = Math.floor((Math.random() * 10) + 1);
+  console.log(x, y);
+}
