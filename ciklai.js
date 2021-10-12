@@ -1,3 +1,4 @@
+
 //1.console.log’e, naudojant ciklą atspausdinti penkias eilutes ‘Labas’;
 for(let i= 0; i<5; i++){
 console.log("Labas");}
@@ -118,4 +119,3 @@ var nelyginiaiSkaiciai2=0;
 //   x = Math.floor(Math.random() * 11);
 //   y = Math.floor(Math.random() * 11);
 //   console.log(x, y);
-// 
