@@ -78,9 +78,9 @@ var x = 0;
 }
 console.log("13---------");
 // 13.console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Ciklą kartoti tol, kol neiškris abu vienodi skaičiai;
-var x=0;
-var y=0;
-while (x===y){
+var x;
+var y;
+while (x!==y){
    x = Math.floor((Math.random() * 10) + 1);
    y = Math.floor((Math.random() * 10) + 1);
   console.log(x, y);
