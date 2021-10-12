@@ -46,10 +46,69 @@
 //   console.log(x, y);
 // }
 // console.log(sum1, sum2)
-var x = 0;
-var y =0;
- while (x%2 ===0 || y%2 ===0){
-  x = Math.floor((Math.random() * 10) + 1);
-  y = Math.floor((Math.random() * 10) + 1);
-  console.log(x, y);
+// var x = 0;
+// var y =0;
+//  while (x%2 ===0 || y%2 ===0){
+//   x = Math.floor((Math.random() * 10) + 1);
+//   y = Math.floor((Math.random() * 10) + 1);
+//   console.log(x, y);
+// }
+// var x;
+// var y;
+// while (x!==y){
+//    x = Math.floor((Math.random() * 10) + 1);
+//    y = Math.floor((Math.random() * 10) + 1);
+//   console.log(x, y);
+//   }
+
+//   (let i = 0; i>=0&&nelyginiaiSkaiciai<3; i++)
+// let nelyginiaiSkaiciai1 = 0;
+// let nelyginiaiSkaiciai2 = 0;
+//  while (nelyginiaiSkaiciai1<=3 && nelyginiaiSkaiciai2<=3 ){
+//   let x = Math.floor(Math.random() * 11);
+//   let y = Math.floor(Math.random() * 11);
+//   if (x%2===1 || y%2===1){
+//     nelyginiaiSkaiciai1++;
+//     nelyginiaiSkaiciai2++;
+//   }
+//   console.log(x, y);
+// }
+
+ let pinigine = [];
+  let array =Math.floor(Math.random() * (30 - 10) + 10);
+  for (let i=0; i<array; i++)
+  pinigine.push(Math.floor(Math.random() * 11))
+
+console.log(pinigine, array);
+console.log("2---------")
+
+let total = 0;
+for (let i in pinigine) {
+  total += pinigine[i];
 }
+console.log(total)
+console.log("3---------")
+// if (pinigine>2){
+  let sum = 0;
+    sum +=pinigine[i]
+    if (pinigine[i] <= 2) {
+    return 0;}
+        console.log(sum)
+    
+// 
+// for (let i<2 in pinigine) {
+//   total1 += pinigine[i];
+// }
+// console.log(total1)
+// console.log("4---------")
+
+// console.log("18---------")
+// const nuotraukos =  ['šuo', 'katė', 'automobilis', 'namas', 'kiemas'];
+// nuotraukos.sort();
+// console.log(nuotraukos);
+//  let i =Math.floor(Math.random() * (30 - 10) + 10);
+// //   // function getRandomArbitrary(min, max) {
+// //   //   return Math.random() * (max - min) + min;
+// // while (pinigine.length=count)
+//   pinigine.push(Math.floor(Math.random() * 11))
+// for (var i = 0; i < 10; i++)
