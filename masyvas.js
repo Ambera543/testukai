@@ -16,8 +16,25 @@ for (let i in pinigine) {
 console.log(total)
 console.log("3---------")
 // 3.Naudojant ciklą apskaičiuoti masyvo iš 1 uždavinio popierinių pinigų (skaičių didesnių už 2 ) reikšmių sumą;
+// console.log(pinigine, array);
+function sum (popieriniai){
+  let sum =0;
+  let items=0;
+  for (let i=0; i<popieriniai.length; i++)
+  if (popieriniai[i]>2){
+    sum+=popieriniai[i];
+    items++;}
+    return sum
+}
+
+console.log(sum(pinigine))
 console.log("4---------")
 // 4.Išleisti visus metalinius pinigus (reikšmes, kurios yra mažesnės arba lygios 2 padaryti lygias 0) iš 1 uždavinio;
+
+ 
+
+
+// console.log((pinigine))
 console.log("5---------")
 // 5.Surasti didžiausią reikšmę 1 uždavinio masyve ir paskaičiuoti kiek tokių didžiausių reikšmių masyve yra;
 

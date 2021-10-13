@@ -74,26 +74,26 @@
 //   console.log(x, y);
 // }
 
- let pinigine = [];
-  let array =Math.floor(Math.random() * (30 - 10) + 10);
-  for (let i=0; i<array; i++)
-  pinigine.push(Math.floor(Math.random() * 11))
+//  let pinigine = [];
+//   let array =Math.floor(Math.random() * (30 - 10) + 10);
+//   for (let i=0; i<array; i++)
+//   pinigine.push(Math.floor(Math.random() * 11))
 
-console.log(pinigine, array);
-console.log("2---------")
+// console.log(pinigine, array);
+// console.log("2---------")
 
-let total = 0;
-for (let i in pinigine) {
-  total += pinigine[i];
-}
-console.log(total)
-console.log("3---------")
-// if (pinigine>2){
-  let sum = 0;
-    sum +=pinigine[i]
-    if (pinigine[i] <= 2) {
-    return 0;}
-        console.log(sum)
+// let total = 0;
+// for (let i in pinigine) {
+//   total += pinigine[i];
+// }
+// console.log(total)
+// console.log("3---------")
+// // if (pinigine>2){
+//   let sum = 0;
+//     sum +=pinigine[i]
+//     if (pinigine[i] <= 2) {
+//     return 0;}
+//         console.log(sum)
     
 // 
 // for (let i<2 in pinigine) {
@@ -112,3 +112,31 @@ console.log("3---------")
 // // while (pinigine.length=count)
 //   pinigine.push(Math.floor(Math.random() * 11))
 // for (var i = 0; i < 10; i++)
+let pinigine = [];
+  let array =Math.floor(Math.random() * (30 - 10) + 10);
+  for (let i=0; i<array; i++)
+  pinigine.push(Math.floor(Math.random() * 11))
+
+// 
+// var newArr=0;
+// if (pinigine[i]>=2){
+//   pinigine[i]===0;
+  
+//   return newArr}
+  // function newArr (popieriniai){
+  //   let newArr =0;
+  //   let items=0;
+  //   for (let i=0; i<popieriniai.length; i++)
+  //   if (popieriniai[i]>2){
+     
+  //     return 
+  // }
+  
+  // console.log(newArr(pinigine))
+// let index = pinigine.indexOf(3452);
+
+//   if (index !== -1) {
+//       pinigine[index] = 0;
+//   }
+
+// console.log(newArr)
