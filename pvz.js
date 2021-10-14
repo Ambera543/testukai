@@ -146,12 +146,12 @@
 //         pinigine[i] = 0;
 //         return newArr}
 //         console.log(newArr, array);
-let pinigine = [];
-  let array =Math.floor(Math.random() * (30 - 10) + 10);
-  for (let i=0; i<array; i++)
-  pinigine.push(Math.floor(Math.random() * 11))
+// let pinigine = [];
+//   let array =Math.floor(Math.random() * (30 - 10) + 10);
+//   for (let i=0; i<array; i++)
+//   pinigine.push(Math.floor(Math.random() * 11))
 
-console.log(pinigine, array);
+// console.log(pinigine, array);
 // pinigineCopy = [...pinigine]
 // pinigineCopy.forEach(function(item, i) { if (item<=2) pinigineCopy[i] = 0; });
 
@@ -161,14 +161,11 @@ console.log(pinigine, array);
 //   pinigine.push(Math.floor(Math.random() * 11))
 // }
 // console.log(pinigine)
-let a = [];
-let b = [];
-let pinigine1 = [...pinigine];
-pinigine1.forEach(function (item, i){
-if (item > 2) {
-  pinigine1[i] = a;
-} else (b)
-console.log(a, b);
-});
-
+let korteles =['KIKA', 'Euro Vaistinė', 'Drogas', 'Ačiū', 'Lietuvos Geležinkeliai', 'Mano RIMI'];
+let mokejimoKorteles=['MasterCard', 'Visa'];
+for (let i = 0; korteles[i] !== 20; i++) {
+ randomItem = mokejimoKorteles[Math.floor(Math.random()*mokejimoKorteles.length)]
+ console.log(randomItem)
+ korteles.push(randomItem)}
+ console.log(korteles)
 
