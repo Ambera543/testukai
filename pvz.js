@@ -111,12 +111,12 @@
 // //   //   return Math.random() * (max - min) + min;
 // // while (pinigine.length=count)
 //   pinigine.push(Math.floor(Math.random() * 11))
-// for (var i = 0; i < 10; i++)
-let pinigine = [];
-  let array =Math.floor(Math.random() * (30 - 10) + 10);
-  for (let i=0; i<array; i++)
-  pinigine.push(Math.floor(Math.random() * 11))
-
+// // for (var i = 0; i < 10; i++)
+// let pinigine = [];
+//   let array =Math.floor(Math.random() * (30 - 10) + 10);
+//   for (let i=0; i<array; i++)
+//   pinigine.push(Math.floor(Math.random() * 11))
+//   console.log(pinigine, array);
 // 
 // var newArr=0;
 // if (pinigine[i]>=2){
@@ -140,3 +140,35 @@ let pinigine = [];
 //   }
 
 // console.log(newArr)
+// var newArr=[];
+// for (var i = 0; i < pinigine.length; i++){
+//     if (pinigine[i] === 1 && pinigine[i] === 2 )
+//         pinigine[i] = 0;
+//         return newArr}
+//         console.log(newArr, array);
+let pinigine = [];
+  let array =Math.floor(Math.random() * (30 - 10) + 10);
+  for (let i=0; i<array; i++)
+  pinigine.push(Math.floor(Math.random() * 11))
+
+console.log(pinigine, array);
+// pinigineCopy = [...pinigine]
+// pinigineCopy.forEach(function(item, i) { if (item<=2) pinigineCopy[i] = 0; });
+
+// console.log(pinigineCopy)
+
+// for (let i=0; i!==30; i++){
+//   pinigine.push(Math.floor(Math.random() * 11))
+// }
+// console.log(pinigine)
+let a = [];
+let b = [];
+let pinigine1 = [...pinigine];
+pinigine1.forEach(function (item, i){
+if (item > 2) {
+  pinigine1[i] = a;
+} else (b)
+console.log(a, b);
+});
+
+
