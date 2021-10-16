@@ -115,6 +115,12 @@ let MasterCard = korteles.filter(function (item) {
 let Visa = korteles.filter(function (item) {
   return item === "Visa";
 }).length;
+if (MasterCard > Visa) {
+  console.log('MasterCard daugiau');
+} else {
+  console.log('"Visa" daugiau');
+}
+
 console.log("MasterCard:", MasterCard, "," + " Visa:", Visa);
 console.log("14---------");
 // 14.Sukurkite masyve (piniginėje) ketvirtą elementą (skyrelį) į kurį įdėkite 10 loterijos bilietų, kurių numerius sugeneruokite atsitiktinai su rand funkcija nuo 1000000000 iki 9999999999;
@@ -129,12 +135,14 @@ brangiPinigine.push(bilietai);
 console.log(brangiPinigine);
 console.log("15---------");
 // 15. Loterijos bilietų masyvą išrūšiuoti nuo didžiausio numerio iki mažiausio;
-bilietai.sort();
+bilietai.sort((function (a, b) {
+  return b - a;
+}));
 console.log(brangiPinigine);
 console.log("16---------");
 // 16.Į piniginės popierinių pinigų skyrelį įdėti 500 pinigų mažom kupiūrom ( generuoti atsitiktinius skaičius nuo 3 iki 10 ir dėti kaip naujus elementus, kol įdėta suma bus lygi 500);
 let suma = 0;
-while (suma < 500) {
+while (suma === 500) {
   penkiSimtai = Math.floor(Math.random() * (10 - 3) + 3);
   suma = suma + penkiSimtai;
   popieriniai.push(penkiSimtai);
@@ -145,14 +153,16 @@ console.log("17---------");
 bilietai.forEach(function (item) {
   if (item % 777 === 0) {
     console.log("You won", item);
-  } else {console.log("You lost", item)}
+  } else {
+    console.log("You lost", item);
+  }
 });
 
 console.log("18---------");
 //  18.Sukurkite penktą skyrelį ir į jį sudėkite nuotraukas: ['šuo', 'katė', 'automobilis', 'namas', 'kiemas'] ir jas išrūšiuokite pagal žodžių ilgį taip, kad pirma eitų trumpiausi žodžiai;
 
 let nuotraukos = ["šuo", "katė", "automobilis", "namas", "kiemas"];
-nuotraukos.sort(function(a, b){
+nuotraukos.sort(function (a, b) {
   return a.length - b.length;
 });
 brangiPinigine.push(nuotraukos);
