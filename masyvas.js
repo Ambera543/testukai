@@ -142,7 +142,7 @@ console.log(brangiPinigine);
 console.log("16---------");
 // 16.Į piniginės popierinių pinigų skyrelį įdėti 500 pinigų mažom kupiūrom ( generuoti atsitiktinius skaičius nuo 3 iki 10 ir dėti kaip naujus elementus, kol įdėta suma bus lygi 500);
 let suma = 0;
-while (suma === 500) {
+while (suma <= 500) {
   penkiSimtai = Math.floor(Math.random() * (10 - 3) + 3);
   suma = suma + penkiSimtai;
   popieriniai.push(penkiSimtai);
