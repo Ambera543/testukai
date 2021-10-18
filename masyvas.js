@@ -1,7 +1,7 @@
 // 1.Sukurti masyvą (piniginę), kurio ilgis yra atsitiktinis nuo 10 iki 30, o reikšmės atsitiktiniai skaičiai nuo 0 iki 10 (pinigai);
 console.log("1---------");
 let pinigine = [];
-let length = Math.floor(Math.random() * (30 - 10) + 10);
+let length = Math.floor(Math.random() * (30 - 10+1) + 10);
 for (let i = 0; i < length; i++) {
   pinigine.push(Math.floor(Math.random() * 11));
 }
@@ -117,8 +117,10 @@ let Visa = korteles.filter(function (item) {
 }).length;
 if (MasterCard > Visa) {
   console.log('MasterCard daugiau');
-} else {
+} else if((MasterCard < Visa)) { 
   console.log('"Visa" daugiau');
+}else  {
+  console.log('Abieju vienodai')
 }
 
 console.log("MasterCard:", MasterCard, "," + " Visa:", Visa);
@@ -135,7 +137,7 @@ brangiPinigine.push(bilietai);
 console.log(brangiPinigine);
 console.log("15---------");
 // 15. Loterijos bilietų masyvą išrūšiuoti nuo didžiausio numerio iki mažiausio;
-bilietai.sort((function (a, b) {
+brangiPinigine[3].sort((function (a, b) {
   return b - a;
 }));
 console.log(brangiPinigine);
@@ -143,21 +145,21 @@ console.log("16---------");
 // 16.Į piniginės popierinių pinigų skyrelį įdėti 500 pinigų mažom kupiūrom ( generuoti atsitiktinius skaičius nuo 3 iki 10 ir dėti kaip naujus elementus, kol įdėta suma bus lygi 500);
 let suma = 0;
 while (suma <= 500) {
-  penkiSimtai = Math.floor(Math.random() * (10 - 3) + 3);
+  penkiSimtai = Math.floor(Math.random() * (10 - 3+1) + 3);
   suma = suma + penkiSimtai;
   popieriniai.push(penkiSimtai);
 }
 console.log(brangiPinigine);
 console.log("17---------");
 // 17.Patikrinti ar ką nors laimėjote. Bilieto numerius dalinkite iš 777 ir jeigu numeris išsidalins be liekanos - jūs laimėjote! Suskaičiuokite, kiek buvo laimingų bilietų.
-bilietai.forEach(function (item) {
+ let laimingiBilietai = 0;
+brangiPinigine[3].forEach(function (item) {
   if (item % 777 === 0) {
-    console.log("You won", item);
-  } else {
-    console.log("You lost", item);
-  }
-});
+    laimingiBilietai ++;
+  } 
 
+});
+console.log(laimingiBilietai);
 console.log("18---------");
 //  18.Sukurkite penktą skyrelį ir į jį sudėkite nuotraukas: ['šuo', 'katė', 'automobilis', 'namas', 'kiemas'] ir jas išrūšiuokite pagal žodžių ilgį taip, kad pirma eitų trumpiausi žodžiai;
 
