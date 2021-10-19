@@ -28,7 +28,7 @@ function TwoCircles() {
     return (
         <>
         <div className="red-circle"><p>{counter}</p></div>
-        <button onClick={addNumber}>Pridek1</button>
+        <button onClick={addNumber}>Pridek 1</button>
         <div className="red-circle"><p>{sum}</p></div>
         <button onClick={sumuok}>Sumuok</button>
         <button onClick={nulis}>Nunulink</button>
