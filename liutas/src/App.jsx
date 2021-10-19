@@ -1,26 +1,18 @@
-import TwoCircles from "./Components/TwoCircles";
+import ColorInput from "./Components/ColorInput";
+import Select from "./Components/Select";
+import ColorButton from "./Components/ColorButton";
 
 function App() {
-  return (
-    <>
-      <TwoCircles />
-    </>
-  );
+
+
+
+    return (
+        <>
+            <ColorInput></ColorInput>
+           <Select></Select>
+           <ColorButton></ColorButton>
+        </>
+    )
 }
 
 export default App;
-
-// import CowField from './Components/CowField';
-// import SheepField from './Components/SheepField';
-
-// function App() {
-
-//     return (
-//         <>
-//             <h3>HeLLo, Cows!</h3>
-//             <CowField counterColor={'darkturquoise'}/>
-//             <h3>HeLLo, Sheeps!</h3>
-//             <SheepField/>
-//         </>
-//     )
-// }
