@@ -1,16 +1,12 @@
-import  TwoCircles from './Components/TwoCircles'
+import TwoCircles from "./Components/TwoCircles";
 
 function App() {
-
-    return (
-        <>
-           
-            <TwoCircles/>
-        
-        </>
-    )
+  return (
+    <>
+      <TwoCircles />
+    </>
+  );
 }
-
 
 export default App;
 
