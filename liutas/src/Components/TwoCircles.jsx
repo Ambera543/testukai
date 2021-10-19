@@ -15,7 +15,8 @@ function TwoCircles() {
     }
 
     const nulis = () => {
-        setCounter(0) || setSum (0);
+        setCounter(0);
+         setSum (0);
     }
 
         const sumuok = () => {
