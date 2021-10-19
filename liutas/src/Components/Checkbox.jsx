@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function CheckBoxInput() {
+function CheckBox() {
 
     const [value, setValue] = useState([false, true, false, true])
 
@@ -23,4 +23,4 @@ function CheckBoxInput() {
     )
 }
 
-export default CheckBoxInput;
+export default CheckBox;

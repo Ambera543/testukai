@@ -1,5 +1,5 @@
 
-import CheckBoxInput from "./Components/CheckBoxInput";
+import CheckBox from "./Components/Checkbox";
 import SelectInput from "./Components/SelectInput";
 import TextInput from "./Components/TextInput";
 
@@ -11,7 +11,7 @@ function App() {
         <>
             <TextInput></TextInput>
             <SelectInput></SelectInput>
-            <CheckBoxInput></CheckBoxInput>
+            <CheckBox></CheckBox>
         </>
     )
 }
