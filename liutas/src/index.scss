@@ -2,7 +2,7 @@
 body {
   margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   height: 100vh;
   width: 100vw;
@@ -131,7 +131,7 @@ button {
   border-radius: 50%;
   margin: 20px;
   span {
-      font-size: 40px;
+    font-size: 40px;
   }
 }
 
@@ -146,7 +146,21 @@ button {
   transition: all 4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.select  {
+.select {
   padding: 4px 15px;
-  margin: 10px;  
-float:left; }
+  margin: 10px;
+
+  float: left;
+}
+
+.vertical-line {
+  border-left: 6px solid green;
+  height: 500px;
+}
+
+.horizontal-line {
+  border: 1px solid red;
+}
+.colorinput{
+  margin: 20px;
+}

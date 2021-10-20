@@ -1,3 +1,3 @@
-const Simple = <h1>Simple Element</h1>;
+// const Simple = <h1>Simple Element</h1>;
 
-export default Simple;
+// export default Simple;
