@@ -1,41 +1,49 @@
-import ColorInput from "./Components/ColorInput";
-import Select from "./Components/Select";
-import ColorButton from "./Components/ColorButton";
-import Number from "./Components/Number";
-import { useState } from "react";
+import { useState} from "react";
+import FieldAnimal from "./Components/FieldAnimal";
+
 
 function App() {
-  const [color, setColor] = useState("");
 
-  function handleColor(e) {
-    setColor(e.target.value);
-  }
-  const [number, setNumber] = useState("");
+    const [field, setField] = useState([]);
+    // const [field2, setField2] = useState([]);
+    const add = (what) => {
+        const fieldCopy = field.slice();
+        fieldCopy.push({animal:what});
+        setField(fieldCopy);
+        console.log(fieldCopy);
+    }
+    // const added = (what) => {
+    //     const fieldCopy = field2.slice();
+    //     fieldCopy.push({animal:what});
+    //     setField2(fieldCopy);
+    //     console.log(fieldCopy);
+    // }
+    // useEffect(() => {
+    //     console.log('susirenderino')
+    // }, []);
 
-  function handleNumber(e) {
-    setNumber(e.target.value);
-  }
+    return (
+        <div className="field">
+        <div>
+          {field.map((fieldAnimal, i)=><FieldAnimal key={i} fieldAnimal={fieldAnimal}></FieldAnimal>)}
+        </div>
+        {/* <div>
+          {field.map((fieldAnimal, i)=><FieldAnimal key={i} fieldAnimal={fieldAnimal}></FieldAnimal>)}
+        </div> */}
+        <select className="select">
+        <option value={1}>Laukas</option>
+        <option value={2}>Pieva</option>
+        </select>
+        <button onClick={() => add('cow')}>Add cow</button>
+        <button onClick={() => add('sheep')}>Add sheep</button>
+        <button onClick={() => add('horse')}>Add horse</button>
+        </div>
+    );
 
-  return (
-    <>
-      <Select></Select>
-      <ColorInput handleColor={handleColor}></ColorInput>
-      <Number handleNumber={handleNumber}></Number>
-      <ColorButton></ColorButton>
-    </>
-  );
 }
 
 export default App;
 
-// function App() {
 
-//   return (
-//     <>
-//     {data.map((simple, index) => <Simple key={index} simpleColor={simple.simpleColor} simplels={simple.ls} simpleNumber={simple.simpleNumber} />)}
-//     </>
-//   );
-
-//  }
-
-// export default App;
+    
+    

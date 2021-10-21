@@ -1,0 +1,45 @@
+
+    .big {
+        font-size: 27px;
+        letter-spacing: 1px;
+    }
+
+    .small {
+        font-size: 10px;
+        color: lightblue;
+    }
+
+    .center {
+        text-align: center
+    }
+
+    .main {
+        text-align: right;
+    }
+
+    .first {
+        text-align: center;
+        color: greenyellow !important;
+    }
+
+    .price-tag {
+        font-size: 10px;
+        text-align: left;
+    }
+
+    #contacts {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid gold;
+    }
+
+    .like {
+        background-color: rgb(240, 206, 223);
+    }
+
+    .like-button {
+        background-color: hotpink;
+        padding: 5px;
+        width: 200px;
+        cursor: pointer;
+    }

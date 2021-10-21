@@ -2,7 +2,7 @@
 body {
   margin: 0;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
@@ -148,7 +148,7 @@ button {
 
 .select {
   padding: 4px 15px;
-  margin: 10px;
+  margin: 50px;
 
   float: left;
 }
@@ -163,4 +163,78 @@ button {
 }
 .colorinput{
   margin: 20px;
+}
+.zone {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .zone-show {
+      box-sizing: border-box;
+      width: 70vw;
+      height: 100vh;
+      overflow-y: scroll;
+      padding: 40px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      div {
+          height: 100px;
+          width: 100px;
+          margin: 8px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+  }
+  .zone-enter {
+      width: 30vw;
+      height: 50vh;
+      background-color: lightgreen;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 10px 10px;
+      input,
+      select {
+          margin: 10px;
+      }
+      span {
+          display: inline-block;
+          width: 70px;
+      }
+  }
+}
+.field {
+  width: 40%;
+  box-sizing: border-box;
+  float: left;
+  div {
+      background-color: lightgreen;
+      margin: 20px 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      .cow {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          border: 4px dotted deeppink;
+          margin: 10px;
+      }
+      .sheep {
+          height: 50px;
+          width: 50px;
+          border: 4px dotted darkturquoise;
+          margin: 10px;
+      }
+      .horse {
+        border-left: 4px dotted green;
+        height: 50px;
+        margin: 10px;
+      }
+  }
 }
