@@ -1,21 +1,27 @@
-function FieldAnimal({ fieldAnimal }) {
+function FieldAnimal({ fieldAnimal, field, goHome }) {
 
 
-    if ('cow' === fieldAnimal.animal) {
+    if (field === fieldAnimal.field && 'cow' === fieldAnimal.animal) {
         return (
-            <div className="cow">
+            <div className="cow" onClick={() => goHome(fieldAnimal.id)}>
+                <h2>{fieldAnimal.id}</h2>
+                <button onClick={goHome}>Go Home</button>
             </div>
         );
     }
-    else if ('sheep' === fieldAnimal.animal) {
+    else if (field === fieldAnimal.field && 'sheep' === fieldAnimal.animal) {
         return (
-            <div className="sheep">
+            <div className="sheep" onClick={() => goHome(fieldAnimal.id)}>
+                <h2>{fieldAnimal.id}</h2>
+                <button onClick={goHome}>Go Home</button>
             </div>
         );
     }
-    else if ('horse' === fieldAnimal.animal) {
+    else if (field === fieldAnimal.field && 'horse' === fieldAnimal.animal) {
         return (
-            <div className="horse">
+            <div className="horse" onClick={() => goHome(fieldAnimal.id)}>
+                <h2>{fieldAnimal.id}</h2>
+                <button onClick={goHome}>Go Home</button>
             </div>
         );
     }

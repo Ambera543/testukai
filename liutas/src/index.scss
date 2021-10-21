@@ -1,12 +1,12 @@
 @import "App.scss";
 body {
-  margin: 0;
-  display: flex;
+  margin: 10px;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  // flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 
 .blue-square {
@@ -78,12 +78,12 @@ h1 {
 button {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 300;
   text-transform: uppercase;
-  font-size: 0.75em;
+  font-size: 0.5em;
   letter-spacing: 1px;
-  height: 35px;
-  width: 120px;
+  height: 30px;
+  width: 90px;
   line-height: 38px;
   overflow: hidden;
   background: #4dbecf;
@@ -92,7 +92,7 @@ button {
   border: 0;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin: 35px;
+  margin: 20px;
   &:hover,
   &:focus {
     box-shadow: 0 5px 15px rgba(black, 0.1);
@@ -208,33 +208,55 @@ button {
   }
 }
 .field {
-  width: 40%;
+  width: 100%;
   box-sizing: border-box;
-  float: left;
-  div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+  &__part {
       background-color: lightgreen;
-      margin: 20px 0;
+      margin: 20px;
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
       flex-wrap: wrap;
+      min-width: 200px;
+      min-height: 200px;
+      width: 30%;
+      box-sizing: border-box;
       .cow {
-          height: 50px;
-          width: 50px;
+          height: 140px;
+          width: 140px;
           border-radius: 50%;
           border: 4px dotted deeppink;
           margin: 10px;
       }
       .sheep {
-          height: 50px;
-          width: 50px;
+          height: 140px;
+          width: 140px;
           border: 4px dotted darkturquoise;
           margin: 10px;
       }
       .horse {
-        border-left: 4px dotted green;
-        height: 50px;
-        margin: 10px;
+          height: 100px;
+          width: 100px;
+          border: 4px dotted darkorchid;
+          margin: 20px;
+          transform: rotate(45deg);
+          h2{
+            transform: rotate(-45deg)
+          }
+          button{
+            transform: rotate(-45deg)
+          }
       }
   }
-  }
+}
+
+.buttons-holder {
+  margin: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
