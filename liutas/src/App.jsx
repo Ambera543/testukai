@@ -2,9 +2,13 @@ import { useState, useEffect } from "react";
 import FieldAnimal from "./Components/FieldAnimal";
 import idGenerator from "./Common/idGenerator";
 
+
 function App() {
   const [field, setField] = useState([]);
   const [fieldNamber, setFieldNamber] = useState(1);
+  const [svoris, setSvoris] = useState(0);
+  const [counter, setCounter] = useState(0);
+
 
   const add = (what) => {
     const fieldCopy = field.slice();
@@ -12,14 +16,23 @@ function App() {
       id: idGenerator(),
       animal: what,
       field: parseInt(fieldNamber),
+      weight: svoris
     });
     setField(fieldCopy);
     localStorage.setItem("animals", JSON.stringify(fieldCopy));
     console.log(fieldCopy);
   };
 
+  const newCounter = counter + 1;
+
+       setCounter(newCounter);
+
   const selectField = (e) => {
     setFieldNamber(e.target.value);
+  };
+
+  const addSvoris = (event) => {
+    setSvoris(event.target.value);
   };
 
   const goHome = (id) => {
@@ -48,7 +61,7 @@ function App() {
     if (null !== animalsFromStorage) {
       setField(JSON.parse(animalsFromStorage));
     }
-  }, []);
+  }, [svoris, counter, fieldNamber]);
 
   return (
     <>
@@ -59,6 +72,8 @@ function App() {
               key={i}
               field={1}
               fieldAnimal={fieldAnimal}
+              goHome={goHome}
+              svoris={addSvoris}
             ></FieldAnimal>
           ))}
         </div>
@@ -69,8 +84,9 @@ function App() {
               field={2}
               fieldAnimal={fieldAnimal}
               goHome={goHome}
+              svoris={addSvoris}
             ></FieldAnimal>
-          ))}
+          ))} 
         </div>
         <div className="field__part">
           {field.map((fieldAnimal, i) => (
@@ -79,9 +95,9 @@ function App() {
               field={3}
               fieldAnimal={fieldAnimal}
               goHome={goHome}
+              svoris={addSvoris}
             ></FieldAnimal>
           ))}
-        
         </div>
       </div>
       <div className="buttons-holder">
@@ -99,6 +115,7 @@ function App() {
         <button onClick={() => groupGoHome("sheep")}>Go sheeps</button>
         <button onClick={() => groupGoHome("horse")}>Go horses</button>
       </div>
+      <div onChange={setCounter}>{counter}</div>
     </>
   );
 }

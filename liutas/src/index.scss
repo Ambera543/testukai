@@ -226,21 +226,21 @@ button {
       width: 30%;
       box-sizing: border-box;
       .cow {
-          height: 140px;
-          width: 140px;
+          height: 200px;
+          width: 200px;
           border-radius: 50%;
           border: 4px dotted deeppink;
           margin: 10px;
       }
       .sheep {
-          height: 140px;
-          width: 140px;
+          height: 200px;
+          width: 200px;
           border: 4px dotted darkturquoise;
           margin: 10px;
       }
       .horse {
-          height: 100px;
-          width: 100px;
+          height: 190px;
+          width: 190px;
           border-radius: 10%;
           border: 4px dotted darkorchid;
           margin: 20px;
@@ -252,13 +252,13 @@ button {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}}}
+}
 
 
-// } .input{
-//   width: 10%;
-//   height: 5%;
-//   padding: 5px;
-//   margin: 5px 0;
-//   box-sizing: border-box;
-// }}
+} .input{
+  width: 25%;
+  height: 5%;
+  padding: 5px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}}
