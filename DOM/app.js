@@ -28,7 +28,7 @@ const myListe = document.querySelectorAll("h2.first");
 // c.	Visus h2 tagus nuspalvinti šviesiai mėlynai
  document.querySelectorAll("h2").forEach(element => element.style.color='lightblue');
 // d.	Tagų, kurie yra div su klase prices, viduje esantiems h2 tagams pridėti klasę price-tag;
-// document.querySelectorAll("div .prices h2").forEach(h2 => h2.classList.add="price-tag");
+document.querySelectorAll("div.prices h2").forEach(element=> element.classList.add="price-tag");
 // e.	Pabraukti visus tagus su klase new;
  document.querySelectorAll(".new").forEach(element => element.style.textDecoration= "underline");
 // f.	Suskaičiuoti kiek yra gyvūnų kategorijų ir žirafų (jos yra ul tagai);
