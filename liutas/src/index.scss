@@ -265,13 +265,12 @@ button {
     outline: none;
     margin: 5px 0;
   }
-  h2 {
+  .h2 {
     text-transform: uppercase;
     letter-spacing: 1px;
     color: lightskyblue;
     font-size: 10px;
-    margin: 5px;
-    padding: 10px;
+   
   }
   span {
     font-size: 22px;
@@ -287,11 +286,7 @@ button {
   justify-content: flex-start;
   align-items: center;
   padding: 10px;
-  h2 {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: lightskyblue;
-  }
+ 
   .stats {
     letter-spacing: 1px;
     color: lightskyblue;
@@ -313,4 +308,14 @@ h1 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+.h2 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
+  margin: 5px;
+  align-items: center;
+  justify-content: center;
 }

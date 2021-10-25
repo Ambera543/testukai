@@ -3,12 +3,12 @@ import { useState } from "react";
 function OneAnimal({ fieldAnimal, goHome, addWeight, addDate }) {
 
     const [weight, setWeight] = useState('');
-    const [date, setDate] = useState('25-10-2021');
+    const [date, setDate] = useState('');
 
     const handleWeight = e => {
         setWeight(e.target.value);
     }
-    const handleDate = e => {
+    const handledate = e => {
         setDate(e.target.value);
     }
     const submitWeight = () => {
@@ -22,9 +22,10 @@ function OneAnimal({ fieldAnimal, goHome, addWeight, addDate }) {
     }
     return (
         <>
-            <h2>No.:{fieldAnimal.id} Weight: {fieldAnimal.weight} <span>Date:{fieldAnimal.date}</span></h2>
-            <input type="date" onChange={handleDate} value={date} />
-            <button onClick={submitDate}>Add Date</button>
+            <h2 className="h2">No.:{fieldAnimal.id} Weight: {fieldAnimal.weight} </h2>
+            <h2 className="h2"> Date of feeding: <span>{fieldAnimal.date}</span></h2>
+            <input type="date" onChange={handledate} value={date} />
+            <button type="submit" onClick={submitDate}>Add Date</button>
             <input type="text" onChange={handleWeight} value={weight} />
             <button onClick={submitWeight}>Add Weight</button>
             <button onClick={() => goHome(fieldAnimal.id)}>Go home</button>

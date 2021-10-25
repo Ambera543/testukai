@@ -65,10 +65,10 @@ function App() {
         localStorage.setItem('animals', JSON.stringify(fieldCopy))
     }
 
-    const addDate = (id, d) => {
+    const adddate = (id, d) => {
         const fieldCopy = field.slice();
         const i = fieldCopy.findIndex(e => e.id === id);
-        fieldCopy[i].date = parseFloat(d);
+        fieldCopy[i].date= d;
         setField(fieldCopy);
         localStorage.setItem('animals', JSON.stringify(fieldCopy))
     }
@@ -125,13 +125,13 @@ function App() {
             </div>
             <div className="field">
                 <div className="field__part">
-                    {field.map((fieldAnimal, i) => <FieldAnimal key={i} field={1} fieldAnimal={fieldAnimal} goHome={goHome} addWeight={addWeight} addDate={addDate}></FieldAnimal>)}
+                    {field.map((fieldAnimal, i) => <FieldAnimal key={i} field={1} fieldAnimal={fieldAnimal} goHome={goHome} addWeight={addWeight} addDate={adddate}></FieldAnimal>)}
                 </div>
                 <div className="field__part">
-                    {field.map((fieldAnimal, i) => <FieldAnimal key={i} field={2} fieldAnimal={fieldAnimal} goHome={goHome} addWeight={addWeight} addDate={addDate}></FieldAnimal>)}
+                    {field.map((fieldAnimal, i) => <FieldAnimal key={i} field={2} fieldAnimal={fieldAnimal} goHome={goHome} addWeight={addWeight} addDate={adddate}></FieldAnimal>)}
                 </div>
                 <div className="field__part">
-                    {field.map((fieldAnimal, i) => <FieldAnimal key={i} field={3} fieldAnimal={fieldAnimal} goHome={goHome} addWeight={addWeight} addDate={addDate}></FieldAnimal>)}
+                    {field.map((fieldAnimal, i) => <FieldAnimal key={i} field={3} fieldAnimal={fieldAnimal} goHome={goHome} addWeight={addWeight} addDate={adddate}></FieldAnimal>)}
                 </div>
             </div>
             <div className="new">
