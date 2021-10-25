@@ -1,26 +1,26 @@
 import OneAnimal from "./OneAnimal";
 
-function FieldAnimal({ fieldAnimal, field, goHome, addWeight }) {
+function FieldAnimal({ fieldAnimal, field, goHome, addWeight, addDate }) {
 
 
     if (field === fieldAnimal.field && 'cow' === fieldAnimal.animal) {
         return (
             <div className="cow">
-                <OneAnimal goHome={goHome} addWeight={addWeight} fieldAnimal={fieldAnimal} ></OneAnimal>
+                <OneAnimal goHome={goHome} addWeight={addWeight} addDate={addDate} fieldAnimal={fieldAnimal} ></OneAnimal>
             </div>
         );
     }
     else if (field === fieldAnimal.field && 'sheep' === fieldAnimal.animal) {
         return (
             <div className="sheep">
-                <OneAnimal goHome={goHome} addWeight={addWeight} fieldAnimal={fieldAnimal} ></OneAnimal>
+                <OneAnimal goHome={goHome} addWeight={addWeight} addDate={addDate} fieldAnimal={fieldAnimal} ></OneAnimal>
             </div>
         );
     }
     else if (field === fieldAnimal.field && 'horse' === fieldAnimal.animal) {
         return (
             <div className="horse">
-                <OneAnimal goHome={goHome} addWeight={addWeight} fieldAnimal={fieldAnimal} ></OneAnimal>
+                <OneAnimal goHome={goHome} addWeight={addWeight} addDate={addDate} fieldAnimal={fieldAnimal} ></OneAnimal>
             </div>
         );
     }
