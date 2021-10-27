@@ -85,8 +85,8 @@ idContacts.addEventListener("click", function () { idContacts.style.color = "ora
 const padidinti = document.querySelector("u");
 padidinti.addEventListener("click", function(){document.querySelector("#contacts").style.fontSize = "20px"});
 // f.	Padaryti taip, kad paspaudus ant X, esančio tage su id contacts, pridėtos tage su id contacts savybės būtų panaikintos https://stackoverflow.com/questions/18691655/remove-style-on-element
-//  const x = document.querySelector("b");
-// x.addEventListener("click", function(){document.querySelector("#contacts").style.color="white"});
+ const x = document.querySelector("b");
+x.addEventListener("dblclick", function(){document.querySelector("#contacts").style.color="black"});
 // g.	Padaryti tai ką liepia mygtukai Header2 sekcijoje;
  document.getElementById("h1-color-back").addEventListener("click", function(){document.querySelector("h1").style.color = "green"});
 document.getElementById("h1-font-back").addEventListener("click", function(){document.querySelector("h1").style.fontSize= "2em" });
@@ -100,8 +100,9 @@ newAnimal.forEach(e => e.addEventListener('dblclick', () => e.style.color = 'red
 animal.forEach(e => e.addEventListener('click', () => e.style.fontSize = '130%'))
 
 // c.	Padaryti, kad paspaudus ant “PATINKA”, atitinkamai sekcijai būtų priskirta klasė like;
-const patinka = document.querySelectorAll('ul :first-child');
-patinka.forEach(e => e.addEventListener('click', () => e.classList.add='like'));
+const patinka = document.querySelectorAll('.like-button');
+patinka.forEach(e => e.addEventListener('click', () => e.classList.replace('like-button', 'like')));
+console.log(patinka);
 // 5.	Dinaminis elementų kūrimas (su createElement)
 // a.	Dinamiškai su JS pridėti naują kainą “Senjorai tik: 1.99 eur”;
 
@@ -118,13 +119,29 @@ const newSenjorai = document.createTextNode("Senjorų grupė iki 10: tik 5.99 eu
 senjorai.appendChild(newSenjorai);
 newClass.appendChild(senjorai);
 senjorai.classList.add("new");
-// senjorai.addEventListener("click", ()=> e.style.color= "green");
+ senjorai.addEventListener("click", (e)=> e.target.style.color="green");
 
 
 // c.	Dinamiškai su JS kiekvienoje gyvūnų kategorijoje po “PATINKA” pridėkite dar vieną li elementą “NEPATINKA”, kurį paspaudus atitinkamoje sekcijoje būtų nuimta klasė like
-// const newGyvunai = document.querySelectorAll('div ul');
+// const newGyvunai = document.querySelectorAll('.like-button');
+// newGyvunai.forEach(e=>{
 // const nepatinka = document.createElement('li');
-// const newNepatinka = document.createTextNode("NEPATINKA");
-// nepatinka.appendChild(newNepatinka);
-// newGyvunai.appendChild(nepatinka);
+//  const newNepatinka = document.createTextNode("NEPATINKA");;
+// nepatinka.appendChild(newNepatinka);});
 // d.	Dinamiškai su JS sukurkite naują mygtukų grupę HEADER 3 naudojant analogišką html tagų struktūrą kaip ir HEADER 1 ir HEADER 2. Pirmas mygtukas vadintųsi, “Pabraukti H1 tagą”, o antras “Nepabraukti H1 tagą”. Mygtukai turi daryti tai kas ant jų parašyta
+// const newMygtukai = document.querySelector("fieldset")
+const field = document.createElement("fieldset")
+console.log(field);
+const legend = document.createElement("legend");
+console.log(legend);
+ const btn1 = document.createElement("BUTTON");
+ console.log(btn1);
+ const btn2 = document.createElement("BUTTON");
+ console.log(btn2);
+ const text1 = btn1.innerHTML = ("Pabraukti H1 tagą");
+ const text2 = btn2.innerHTML = ("Nepabraukti H1 tagą");
+ console.log(text1, text2);
+//  field.appendChild(text1);
+//  field.appendChild(text2);
+// btn.appendChild(text);
+// newMygtukai.appendChild(btn);
