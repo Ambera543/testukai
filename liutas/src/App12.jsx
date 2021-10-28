@@ -43,7 +43,7 @@ function App() {
     localStorage.setItem("animals", JSON.stringify(fieldCopy));
   };
 
-  const groupGoHome = (group) => {
+  const group = (group) => {
     const fieldCopy = field.slice();
     while (true) {
       const ind = fieldCopy.findIndex((e) => e.animal === group);
