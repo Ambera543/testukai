@@ -5,7 +5,7 @@ function ZooCreate({create}) {
 
     
 
-    const [inputs, setInputs] = useState({
+    const [input, setInput] = useState({
         name: '',
         type: '',
         weight: '',
@@ -13,29 +13,29 @@ function ZooCreate({create}) {
     })
 
     const formControl = (e, what) => {
-        const inputsCopy = { ...inputs };
-        inputsCopy[what] = e.target.value;
-        setInputs(inputsCopy);
+        const inputCopy = { ...input };
+        inputCopy[what] = e.target.value;
+        setInput(inputCopy);
     }
 
     const handleCreate = () => {
-        create(inputs);
+        create(input);
     }
 
     return (
         <div className="zoo_form">
             <h2>Add new animal</h2>
             <div className="zoo_form_input">
-                <span>Name</span><input type="text" value={inputs.name} onChange={(e) => formControl(e, 'name')} />
+                <span>Name</span><input type="text" value={input.name} onChange={(e) => formControl(e, 'name')} />
             </div>
             <div className="zoo_form_input">
-            <span>Type</span><input type="text" value={inputs.type} onChange={(e) => formControl(e, 'type')} />
+            <span>Type</span><input type="text" value={input.type} onChange={(e) => formControl(e, 'type')} />
             </div>
             <div className="zoo_form_input">
-            <span>Weight</span><input type="text" value={inputs.weight} onChange={(e) => formControl(e, 'weight')} />
+            <span>Weight</span><input type="text" value={input.weight} onChange={(e) => formControl(e, 'weight')} />
             </div>
             <div className="zoo_form_input">
-            <span>Born date</span><input type="date" value={inputs.born} onChange={(e) => formControl(e, 'born')} />
+            <span>Born date</span><input type="date" value={input.born} onChange={(e) => formControl(e, 'born')} />
             </div>
             <div className="zoo_form_input">
             <button onClick={handleCreate}>Add</button>

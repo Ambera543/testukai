@@ -1,18 +1,20 @@
 
-function ZooAnimal({animal, goHome, submitDate, handledate, date }) {
 
-   
+function ZooAnimal({animals, modal}) {
+
+    const  showEdit = () => {
+        modal(animals)
+    }
+
     return (
         <div className="zoo_list_animals">
-            <div className="zoo_ist_animal_name">{animal.name}</div>
-            <div className="zoo_list_animal_type">{animal.type}</div>
-            <div className="zoo_list_animal_stats">
-                <span><i>Born date:</i> {animal.born.slice(0, 10)}</span>
-                <span><i>Weight:</i> {animal.weight} kg.</span>
+            <div className="zoo_list_animals_name">{animals.name}</div>
+            <div className="zoo_list_animals_type">{animals.type}</div>
+            <div className="zoo_list_animals_stats">
+                <span><i>Born date:</i> {new Date(animals.born).getFullYear()}</span>
+                <span><i>Weight:</i> {animals.weight} kg.</span>
             </div>
-            {/* <input type="date" onChange={handledate} value={date} />
-            <button type="submit" onClick={submitDate}>Feeding Date</button>
-             <button onClick={goHome}>Go Home</button>  */}
+            <button onClick={showEdit}>Edit</button>
         </div>
     )
 }

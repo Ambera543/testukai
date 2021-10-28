@@ -5,7 +5,7 @@ function ZooList({animals}) {
 
     return (
         <div className="zoo_list">
-            {animals.map(animal => <ZooAnimal key={animal.id} animal={animal}></ZooAnimal>)}
+            {animals.map(animals => <ZooAnimal key={animals.id} animals={animals}></ZooAnimal>)}
         </div>
     )
 }
