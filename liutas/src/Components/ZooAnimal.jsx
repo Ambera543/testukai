@@ -1,22 +1,23 @@
+function ZooAnimal({ animal, modal }) {
+  const showEdit = () => {
+    modal(animal);
+  }
 
-
-function ZooAnimal({animals, modal}) {
-
-    const  showEdit = () => {
-        modal(animals)
-    }
-
-    return (
-        <div className="zoo_list_animals">
-            <div className="zoo_list_animals_name">{animals.name}</div>
-            <div className="zoo_list_animals_type">{animals.type}</div>
-            <div className="zoo_list_animals_stats">
-                <span><i>Born date:</i> {new Date(animals.born).getFullYear()}</span>
-                <span><i>Weight:</i> {animals.weight} kg.</span>
-            </div>
-            <button onClick={showEdit}>Edit</button>
-        </div>
-    )
+  return (
+    <div className="zoo_list_animals">
+      <div className="zoo_list_animals_name">{animal.name}</div>
+      <div className="zoo_list_animals_type">{animal.type}</div>
+      <div className="zoo_list_animals_stats">
+        <span>
+          <i>Born date:</i> {new Date(animal.born).getFullYear()}
+        </span>
+        <span>
+          <i>Weight:</i> {animal.weight} kg.
+        </span>
+      </div>
+      <button onClick={showEdit}>Edit</button>
+    </div>
+  );
 }
 
 export default ZooAnimal;
@@ -25,24 +26,24 @@ export default ZooAnimal;
 
 // function OneAnimal({ fieldAnimal, goHome, addWeight, addDate }) {
 
-    // const [weight, setWeight] = useState('');
-    // const [date, setDate] = useState('');
+// const [weight, setWeight] = useState('');
+// const [date, setDate] = useState('');
 
-    // const handleWeight = e => {
-    //     setWeight(e.target.value);
-    // }
-    // const handledate = e => {
-    //     setDate(e.target.value);
-    // }
-    // const submitWeight = () => {
-    //     addWeight(fieldAnimal.id, weight)
-    //     setWeight('');
-    // }
+// const handleWeight = e => {
+//     setWeight(e.target.value);
+// }
+// const handledate = e => {
+//     setDate(e.target.value);
+// }
+// const submitWeight = () => {
+//     addWeight(fieldAnimal.id, weight)
+//     setWeight('');
+// }
 
-    // const submitDate = () => {
-    //     addDate(fieldAnimal.id, date)
-    //     setDate('');
-    // }
+// const submitDate = () => {
+//     addDate(fieldAnimal.id, date)
+//     setDate('');
+// }
 //     return (
 //         <>
 //             <h2 className="h2">No.:{fieldAnimal.id} Weight: {fieldAnimal.weight} </h2>

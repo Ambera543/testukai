@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import ZooCreate from "./Components/ZooCreate";
 import ZooList from "./Components/ZooList";
 import ZooModal from "./Components/ZooModal";
+// import ZooAnimal from "./Components/ZooAnimal";
+
 function App() {
 
 
-    const [animals, setAnimals] = useState([]);
+    const [animal, setAnimal] = useState([]);
     const [lastUpdate, setLastUpdate] = useState(Date.now())
     const [showModal, setShowModal] = useState(false)
     const [modalAnimals, setModalAnimals] = useState({
@@ -20,22 +22,22 @@ function App() {
     useEffect(() => {
         axios.get('http://localhost:3003/animals')
             .then(res => {
-                setAnimals(res.data);
+                setAnimal(res.data);
                 console.log(res.data);
             })
     }, [lastUpdate])
 
-    const create = animals => {
-        axios.post('http://localhost:3003/animals', animals)
+    const create = animal => {
+        axios.post('http://localhost:3003/animals', animal)
             .then(res => {
                 console.log(res.data);
                 setLastUpdate(Date.now());
             })
     }
 
-    const edit = (animals, id) => {
+    const edit = (animal, id) => {
         setShowModal(false);
-        axios.put('http://localhost:3003/animals/'+id, animals)
+        axios.put('http://localhost:3003/animals/'+id, animal)
             .then(res => {
                 console.log(res.data);
                 setLastUpdate(Date.now());
@@ -52,9 +54,9 @@ function App() {
     }
 
 
-    const modal = (animals) => {
+    const modal = (animal) => {
         setShowModal(true);
-        setModalAnimals(animals);
+        setModalAnimals(animal);
     }
 
     const hide = () => {
@@ -64,7 +66,7 @@ function App() {
     return (
         <div className="zoo">
             <ZooCreate create={create}></ZooCreate>
-            <ZooList animals={animals} modal={modal}></ZooList>
+            <ZooList animals={animal} modal={modal}></ZooList>
             <ZooModal edit={edit} remove={remove} hide={hide} animals={modalAnimals} showModal={showModal}></ZooModal>
         </div>
     )
