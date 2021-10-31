@@ -77,7 +77,7 @@ app.post('/jewelry', (req, res) => {
 // UPDATE table_name
 // SET column1 = value1, column2 = value2, ...
 // WHERE condition;
-app.put('/diamonds/:id', (req, res) => {
+app.put('/jewelery/:id', (req, res) => {
     const sql = `
         UPDATE jewelry
         SET product = ?, quantity = ?, price = ?, last_order = ?
@@ -125,5 +125,5 @@ app.delete('/jewelry/:id', (req, res) => {
 // })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+//   console.log(`Example app listening at http://localhost:${port}`)
 })

@@ -1,7 +1,7 @@
 
  import { useState } from "react";
 
-function Jewelery() {
+function Jewelery(create) {
 
 
     const [inputs, setInputs] = useState({
@@ -31,7 +31,7 @@ function Jewelery() {
 
     return (
         <div className="jewelery_form">
-            <h2>Add new animal</h2>
+            <h2>Add new jewelery</h2>
             <div className="jewelery_form_input">
             <span>Product</span><input type="text" value={inputs.product} onChange={(e) => formControl(e, 'product')} />
             </div>
@@ -42,7 +42,7 @@ function Jewelery() {
             <span>Price</span><input type="text" value={inputs.price} onChange={(e) => formControl(e, 'price')} />
             </div>
             <div className="jewelery_form_input">
-            <span>In stock</span><input type="date" value={inputs.in_stock} onChange={(e) => formControl(e, 'in_stock')} />
+            <span>In stock</span><input type="text" value={inputs.in_stock} onChange={(e) => formControl(e, 'in_stock')} />
             </div>
             <div className="jewelery_form_input">
             <span>Last order</span><input type="date" value={inputs.last_order} onChange={(e) => formControl(e, 'last_order')} />

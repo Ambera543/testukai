@@ -1,9 +1,18 @@
 .App {
   text-align: center;
 }
+.jewelery {
+  background-color: steelblue;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
 
+  /* &_form{
+  display: grid;
+  } */
+}
 
-
+/* 
 // .App-logo {
 //   height: 40vmin;
 //   pointer-events: none;
@@ -37,4 +46,4 @@
 //   to {
 //     transform: rotate(360deg);
 //   }
-// }
+// } */

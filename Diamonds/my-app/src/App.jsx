@@ -6,6 +6,7 @@ import Jewelery from "./components/Jewelery";
 function App() {
   const [jewelery, setJewelery] = useState();
   const [lastUpdate, setLastUpdate] = useState(Date.now());
+  const [showModal, setShowModal] = useState(false)
   const [modalJewelery, setModalJewelery] = useState({
     product: "",
     quantity: "",
@@ -28,7 +29,7 @@ function App() {
     });
   };
 
-  const edit = (animal, id) => {
+  const edit = (jewelery, id) => {
     setShowModal(false);
     axios.put("http://localhost:3003/jewelery/" + id, jewelery).then((res) => {
       console.log(res.data);
@@ -43,10 +44,20 @@ function App() {
       setLastUpdate(Date.now());
     });
   };
+  const modal = (jewelery) => {
+    setShowModal(true);
+    setModalJewelery(jewelery);
+}
+
+const hide = () => {
+    setShowModal(false);
+}
 
   return <div className="App">
 
-
+<Jewelery jewelery={jewelery} modal={modal}></Jewelery>
+<Jewelery edit={edit} remove={remove} hide={hide} animal={modalJewelery} showModal={showModal}></Jewelery>
+<Jewelery jewelery={jewelery} create={create}></Jewelery>
   </div>;
 }
 
