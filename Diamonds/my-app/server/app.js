@@ -56,7 +56,7 @@ app.get('/jewelry', (req, res) => {
 app.post('/jewelry', (req, res) => {
     const sql = `
         INSERT INTO jewelry
-        (product, quantity, price, in_stock, last_order)
+        (product, quantity, price, in_stock, last_order )
         VALUES (?, ?, ?, ?, ?)
     `;
     con.query(sql, [
@@ -77,7 +77,7 @@ app.post('/jewelry', (req, res) => {
 // UPDATE table_name
 // SET column1 = value1, column2 = value2, ...
 // WHERE condition;
-app.put('/jewelery/:id', (req, res) => {
+app.put('/jewelry/:id', (req, res) => {
     const sql = `
         UPDATE jewelry
         SET product = ?, quantity = ?, price = ?, last_order = ?
@@ -126,4 +126,4 @@ app.delete('/jewelry/:id', (req, res) => {
 
 app.listen(port, () => {
 //   console.log(`Example app listening at http://localhost:${port}`)
-})
+ })

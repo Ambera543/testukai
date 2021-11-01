@@ -1,16 +1,17 @@
 .App {
   text-align: center;
 }
-.jewelery {
+.jewelry {
   background-color: steelblue;
   min-width: 100vw;
   min-height: 100vh;
   position: relative;
 
-  /* &_form{
+   &_form{
   display: grid;
-  } */
+  } 
 }
+
 
 /* 
 // .App-logo {
@@ -34,7 +35,6 @@
 //   font-size: calc(10px + 2vmin);
 //   color: white;
 // }
-
 // .App-link {
 //   color: #61dafb;
 // }
