@@ -1,18 +1,18 @@
-function ZooAnimal({ animal, modal }) {
+function ZooAnimal({ animals, modal }) {
   const showEdit = () => {
-    modal(animal);
+    modal({animals});
   }
 
   return (
     <div className="zoo_list_animals">
-      <div className="zoo_list_animals_name">{animal.name}</div>
-      <div className="zoo_list_animals_type">{animal.type}</div>
+      <div className="zoo_list_animals_name">{animals.name}</div>
+      <div className="zoo_list_animals_type">{animals.type}</div>
       <div className="zoo_list_animals_stats">
         <span>
-          <i>Born date:</i> {new Date(animal.born).getFullYear()}
+          <i>Born date:</i> {new Date(animals.born).getFullYear()}
         </span>
         <span>
-          <i>Weight:</i> {animal.weight} kg.
+          <i>Weight:</i> {animals.weight} kg.
         </span>
       </div>
       <button onClick={showEdit}>Edit</button>

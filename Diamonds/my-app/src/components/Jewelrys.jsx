@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Jewelry({create}) {
+function Jewelrys({create}) {
   const [inputs, setInputs] = useState({
     product: "",
     quantity: "",
@@ -79,4 +79,4 @@ function Jewelry({create}) {
   );
 }
 
-export default Jewelry;
+export default Jewelrys;

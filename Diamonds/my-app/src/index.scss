@@ -1,36 +1,57 @@
-@import 'App.scss';
-
+@import "App.scss";
 
 .body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-     height: 100vh;
-    width: 100vw;
-    box-sizing: border-box;
-     flex-direction: column-reverse;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  flex-direction: column-reverse;
 }
-
 .jewelry {
   background-color: steelblue;
   min-width: 100vw;
   min-height: 100vh;
   position: relative;
+  float: left;
 
-}
-.pink {
-  color: pink;
-  margin: 30px;
-  padding: 10px;
-  border: 1px solid pink;
-  border-radius: 7px;
+  &_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  &_form_input{
+  width:300px;
+ margin-left:320px;
+ padding:10px;
+ background-color:#1B4F72;
+ margin: auto;
+ border-color: grey;
+
+ span{
+  padding: 5px 15px;
+  margin: 10px;
+ }
+  }
 }
 
-.goth {
-  color: black;
-  margin: 30px;
-  padding: 10px;
-  border: 3px dashed black;
-  border-radius: 7px;
-}
+
+// .pink {
+//   color: pink;
+//   margin: 30px;
+//   padding: 10px;
+//   border: 1px solid pink;
+//   border-radius: 7px;
+// }
+
+// .goth {
+//   color: black;
+//   margin: 30px;
+//   padding: 10px;
+//   border: 3px dashed black;
+//   border-radius: 7px;
+// }

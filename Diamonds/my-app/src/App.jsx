@@ -1,13 +1,14 @@
 import "./App.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Jewelry from "./components/Jewelry";
+import Jewelrys from "./components/Jewelrys";
+// import JewelryList from "./components/JewelryList"
 
 function App() {
-  const [jewelry, setjewelry] = useState();
+  const [jewelry, setJewelry] = useState();
   const [lastUpdate, setLastUpdate] = useState(Date.now());
   // const [showModal, setShowModal] = useState(false)
-  // const [modaljewelry, setModaljewelry] = useState({
+  // const [modalJewelry, setModalJewelry] = useState({
   //   product: "",
   //   quantity: "",
   //   price: "",
@@ -17,7 +18,7 @@ function App() {
 
   useEffect(() => {
     axios.get("http://localhost:3003/jewelry").then((res) => {
-      setjewelry(res.data);
+      setJewelry(res.data);
       console.log(res.data);
     });
   }, [lastUpdate]);
@@ -46,7 +47,7 @@ function App() {
 //   };
 //   const modal = (jewelry) => {
 //     setShowModal(true);
-//     setModaljewelry(jewelry);
+//     setModalJewelry(jewelry);
 // }
 
 // const hide = () => {
@@ -55,10 +56,11 @@ function App() {
 
   return <div className="App">
 
-{/* <jewelry jewelry={jewelry} modal={modal}></jewelry>
-{/* <jewelry edit={edit} remove={remove} hide={hide} animal={modaljewelry} showModal={showModal}></jewelry> */}
-<Jewelry create={create}></Jewelry> 
+{/* <JewelryList jewelrys={jewelry} modal={modal}></JewelryList> */}
+{/* <Jewelrys edit={edit} remove={remove} hide={hide} jewelry={modalJewelry} showModal={showModal}></Jewelrys>  */}
+<Jewelrys create={create}></Jewelrys> 
+
   </div>;
-}
+};
 
 export default App;

@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 
-function ZooModal({showModal, hide, animal, edit, remove}) {
+function ZooModal({showModal, hide, animals, edit, remove}) {
     const [input, setInput] = useState({
         name: '',
         type: '',
@@ -11,12 +11,12 @@ function ZooModal({showModal, hide, animal, edit, remove}) {
 
     useEffect(() => {
         setInput({
-            name: animal.name,
-            type: animal.type,
-            weight: animal.weight,
-            born: animal.born.slice(0,10)
+            name: animals.name,
+            type: animals.type,
+            weight: animals.weight,
+            born: animals.born.slice(0,10)
         })
-    },[animal])
+    },[animals]);
 
     const handleEdit = () => {
         edit({
@@ -24,7 +24,7 @@ function ZooModal({showModal, hide, animal, edit, remove}) {
             type: input.type,
             weight: input.weight,
             born: input.born
-        }, animal.id)
+        }, animals.id)
     }
 
     const formControl = (e, what) => {
@@ -57,7 +57,7 @@ function ZooModal({showModal, hide, animal, edit, remove}) {
             <div className="zoo_form_input_buttons">
             <button onClick={handleEdit}>Save</button>
             <button onClick={hide}>Cancel</button>
-            <button onClick={() => remove(animal.id)}>Delete</button>
+            <button onClick={() => remove(animals.id)}>Delete</button>
             </div>
         </div>
         </div>
