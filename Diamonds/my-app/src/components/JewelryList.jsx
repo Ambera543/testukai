@@ -1,11 +1,11 @@
 
 import Jewely from "./Jewely"
 
-function JewelryList({jewerlys}) {
+function JewelryList({jewelrys}) {
 
     return (
         <div>
-            {jewerlys.map((jewely) => <Jewely key={jewely.id} jewelry={jewely}></Jewely>)}
+            {jewelrys.map(jewelry => <Jewely key={jewelry.id} jewelry={jewelry}></Jewely>)}
         </div>
     )
 }
