@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-function Jewelrys({create}) {
+function Jewelrys({ create }) {
   const [inputs, setInputs] = useState({
     product: "",
     quantity: "",
     price: "",
     in_stock: "",
-    last_order: ""
+    last_order: "",
   });
 
   const formControl = (e, what) => {
@@ -22,7 +22,7 @@ function Jewelrys({create}) {
       quantity: "",
       price: "",
       in_stock: "",
-    last_order: ""
+      last_order: "",
     });
   };
   console.log(handleCreate);
@@ -32,7 +32,7 @@ function Jewelrys({create}) {
       <h2>Add new jewelry</h2>
 
       <div className="jewelry_form_input">
-        <span>Product</span>
+        <span>Product </span>
         <input
           type="text"
           value={inputs.product}
@@ -48,7 +48,7 @@ function Jewelrys({create}) {
         />
       </div>
       <div className="jewelry_form_input">
-        <span>Price</span>
+        <span>Price </span>
         <input
           type="text"
           value={inputs.price}
@@ -64,7 +64,7 @@ function Jewelrys({create}) {
         />
       </div>
       <div className="jewelry_form_input">
-        <span>Last order</span>
+        <span>Last order </span>
         <input
           type="date"
           value={inputs.last_order}

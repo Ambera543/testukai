@@ -1,21 +1,22 @@
-// import Jewely from "./Jewely"
 
-// function JewelryList({jewelrys}) {
+import Jewely from "./Jewely"
 
-//     return (
-//         <div>
-//             {jewelrys.map((jewelry) => <Jewely key={jewelry.id} jewelry={jewelry}></Jewely>)}
-//         </div>
-//     )
-// }
+function JewelryList({jewerlys}) {
 
-
-// export default JewelryList;
-// console.log("cia", JewelryList);
+    return (
+        <div>
+            {jewerlys.map((jewely) => <Jewely key={jewely.id} jewelry={jewely}></Jewely>)}
+        </div>
+    )
+}
 
 
-// //     quantity: "",
-// //     price: "",
-// //     in_stock: "",
-// //   last_order: ""</h1>
-// //   }
+export default JewelryList;
+
+
+
+//     quantity: "",
+//     price: "",
+//     in_stock: "",
+//   last_order: ""</h1>
+//   }
