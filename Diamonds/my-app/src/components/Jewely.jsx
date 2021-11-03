@@ -20,5 +20,4 @@ function Jewely({jewelrys, modal}) {
 }
 
 export default Jewely;
-console.log(Jewely);
-// onClick={showEdit}
+
