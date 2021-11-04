@@ -1,11 +1,11 @@
 
 import Jewely from "./Jewely"
 
-function JewelryList({jewelrys}) {
+function JewelryList({jewelrys, modal}) {
 
     return (
         <div className="container">
-            {jewelrys.map(jewely => <Jewely key={jewely.id} jewelry={jewely}></Jewely>)}
+            {jewelrys.map(jewely => <Jewely key={jewely.id} jewelry={jewely} modal={modal}></Jewely>)}
         </div>
     )
 }

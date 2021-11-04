@@ -2,13 +2,13 @@
   background-color: steelblue;
   min-width: 100vw;
   min-height: 100vh;
-  &__nav {
+  &_nav {
     height: 100px;
     background-color: lightcoral;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    &__filter {
+    &_filter {
         font-size: 18px;
         margin: 20px;
         span {
@@ -17,9 +17,8 @@
         }
     }
     &_reset {
-      margin: 10px;
-  }
-    
+        margin: 10px;
+    }
 }
   &_list {
     display: flex;
@@ -113,10 +112,10 @@
     border: 3px solid white;
     box-shadow: 2px 2px 2px gray;
     .zoo_form_input {
-      width: 40vw;
+        width: 40vw;
     }
     .zoo_form {
-      width: 80vw;
+        width: 80vw;
     }
-  }
+}
 }

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Jewelrys from "./components/Jewelrys";
 import JewelryList from "./components/JewelryList"
-import Jewely from "./components/Jewely";
+// import Jewely from "./components/Jewely";
 import JewelryModal from "./components/JewelryModal";
 import JewelNav from "./components/JewelNav";
 
@@ -53,7 +53,7 @@ function App() {
   }, [searchBy])
 
   useEffect(() => {
-    axios.get('http://localhost:3003/jewelry-product')
+    axios.get('http://localhost:3003/jewelry-product/')
         .then(res => {
             setProducts(res.data);
             console.log(res.data);
@@ -107,5 +107,4 @@ const hide = () => {
 
 export default App;
 
-console.log("je", Jewely);
-console.log("cia", JewelryList);
+

@@ -39,7 +39,10 @@ function JewelryModal({ showModal, hide, jewelry, edit, remove }) {
   };
 
   return (
-    <div className="jewelry_modal">
+    <div className="jewelry_modal" style={{
+      display: showModal ? 'flex' : 'none',
+      top: window.scrollY + 100 + 'px'
+      }}>
       <div className="jewelry_form">
         <h2>Edit Jewerly</h2>
         <div className="jewelry_form_input">

@@ -19,7 +19,11 @@ function ZooCreate({create}) {
     }
 
     const handleCreate = () => {
-        create(input);
+        const inputCopy = { ...input };
+        if (inputCopy.weight === '') {
+            inputCopy.weight = 0;
+        }
+        create(inputCopy);
     }
 
     return (

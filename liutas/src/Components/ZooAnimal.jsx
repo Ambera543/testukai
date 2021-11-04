@@ -1,6 +1,6 @@
 function ZooAnimal({ animals, modal }) {
   const showEdit = () => {
-    modal({animals});
+    modal(animals)
   }
 
   return (
@@ -8,9 +8,9 @@ function ZooAnimal({ animals, modal }) {
       <div className="zoo_list_animals_name">{animals.name}</div>
       <div className="zoo_list_animals_type">{animals.type}</div>
       <div className="zoo_list_animals_stats">
-        <span>
-          <i>Born date:</i> {new Date(animals.born).getFullYear()}
-        </span>
+        
+        <span><i>Born date:</i> {animals.born}</span>
+        
         <span>
           <i>Weight:</i> {animals.weight} kg.
         </span>
