@@ -4,8 +4,8 @@ import Jewely from "./Jewely"
 function JewelryList({jewelrys}) {
 
     return (
-        <div>
-            {jewelrys.map(jewelry => <Jewely key={jewelry.id} jewelry={jewelry}></Jewely>)}
+        <div className="container">
+            {jewelrys.map(jewely => <Jewely key={jewely.id} jewelry={jewely}></Jewely>)}
         </div>
     )
 }

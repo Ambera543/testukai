@@ -5,6 +5,7 @@ import Jewelrys from "./components/Jewelrys";
 import JewelryList from "./components/JewelryList"
 import Jewely from "./components/Jewely";
 import JewelryModal from "./components/JewelryModal";
+import JewelNav from "./components/JewelNav";
 
 function App() {
   const [jewelrys, setJewelrys] = useState();
@@ -24,6 +25,40 @@ function App() {
       console.log(res.data);
     });
   }, [lastUpdate]);
+
+
+  const [products, setProducts] = useState([])
+  const [filterBy, setFilterBy] = useState('')
+  const [searchBy, setSearchBy] = useState('')
+
+  useEffect(() => {
+      if (filterBy) {
+      axios.get('http://localhost:3003/jewelry-filter/'+filterBy)
+          .then(res => {
+            setJewelrys(res.data);
+              console.log(res.data);
+          })
+      }
+  }, [filterBy])
+
+
+  useEffect(() => {
+      if (searchBy) {
+      axios.get('http://localhost:3003/jewelry-product/?s='+searchBy)
+          .then(res => {
+            setJewelrys(res.data);
+              console.log(res.data);
+          })
+      }
+  }, [searchBy])
+
+  useEffect(() => {
+    axios.get('http://localhost:3003/jewelry-product')
+        .then(res => {
+            setProducts(res.data);
+            console.log(res.data);
+        })
+}, [lastUpdate])
 
   const create = jewelry => {
     axios.post("http://localhost:3003/jewelry", jewelry).then((res) => {
@@ -47,6 +82,10 @@ function App() {
       setLastUpdate(Date.now());
     });
   };
+
+  const reset = () => {
+    setLastUpdate(Date.now());
+}
   const modal = (jewelry) => {
     setShowModal(true);
     setModalJewelry(jewelry);
@@ -58,8 +97,8 @@ const hide = () => {
 
   return <div className="App">
 
-
- <JewelryList jewelrys={jewelrys} modal={modal}></JewelryList> 
+<JewelNav product={products} search={setSearchBy} filter={setFilterBy} reset={reset}></JewelNav >
+ {jewelrys && <JewelryList jewelrys={jewelrys} modal={modal}></JewelryList> }
  <JewelryModal edit={edit} remove={remove} hide={hide} jewelry={modalJewelry} showModal={showModal} ></JewelryModal>   
 <Jewelrys create={create}></Jewelrys> 
 

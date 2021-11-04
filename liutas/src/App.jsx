@@ -4,6 +4,7 @@ import ZooCreate from "./Components/ZooCreate";
 import ZooList from "./Components/ZooList";
 import ZooModal from "./Components/ZooModal";
 // import ZooAnimal from "./Components/ZooAnimal";
+import ZooNav from "./Components/ZooNav";
 
 function App() {
 
@@ -17,6 +18,31 @@ function App() {
         weight: '',
         born: ''
     })
+
+    const [types, setTypes] = useState([])
+    const [filterBy, setFilterBy] = useState('')
+    const [searchBy, setSearchBy] = useState('')
+
+    useEffect(() => {
+        if (filterBy) {
+        axios.get('http://localhost:3003/animals-filter/'+filterBy)
+            .then(res => {
+                setAnimals(res.data);
+                console.log(res.data);
+            })
+        }
+    }, [filterBy])
+
+
+    useEffect(() => {
+        if (searchBy) {
+        axios.get('http://localhost:3003/animals-name/?s='+searchBy)
+            .then(res => {
+                setAnimals(res.data);
+                console.log(res.data);
+            })
+        }
+    }, [searchBy])
 
 
     useEffect(() => {
@@ -52,7 +78,9 @@ function App() {
                 setLastUpdate(Date.now());
             })
     }
-
+    const reset = () => {
+        setLastUpdate(Date.now());
+    }
 
     const modal = (animal) => {
         setShowModal(true);
@@ -65,6 +93,7 @@ function App() {
 
     return (
         <div className="zoo">
+              <ZooNav types={types} search={setSearchBy} filter={setFilterBy} reset={reset}></ZooNav>
             <ZooCreate create={create}></ZooCreate>
             <ZooList animals={animal} modal={modal}></ZooList>
             <ZooModal edit={edit} remove={remove} hide={hide} animals={modalAnimals} showModal={showModal}></ZooModal>

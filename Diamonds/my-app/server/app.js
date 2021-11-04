@@ -97,7 +97,7 @@ app.put('/jewelry/:id', (req, res) => {
     })
 })
 
-// Trina gyvuna
+// Trina 
 // DELETE FROM table_name
 // WHERE some_column = some_value
 app.delete('/jewelry/:id', (req, res) => {
@@ -113,7 +113,53 @@ app.delete('/jewelry/:id', (req, res) => {
     })
 })
 
+// Randa visus skirtingus produktus
+// SELECT DISTINCT column1, column2, ...
+// FROM table_name;
+app.get('/jewelry-product', (req, res) => {
+    const sql = `
+        SELECT DISTINCT product
+        FROM jewelry
+    `;
+    con.query(sql, (err, results) => {
+        if (err) {
+            throw err;
+        }
+        res.send(results);
+    })
+})
+// rodo tik tam tikro tipo gyvunus
+app.get('/jewelry-filter/:t', (req, res) => {
+    const sql = `
+        SELECT *
+        FROM jewelry
+        WHERE product = ?
+    `;
+    con.query(sql, [req.params.t], (err, results) => {
+        if (err) {
+            throw err;
+        }
+        res.send(results);
+    })
+})
 
+// paieska pagal varda
+// SELECT column1, column2, ...
+// FROM table_name
+// WHERE columnN LIKE pattern;
+app.get('/jewelry-product', (req, res) => {
+    const sql = `
+        SELECT *
+        FROM jewelry
+        WHERE product LIKE ?
+    `;
+    con.query(sql, ['%' + req.query.s + '%'], (err, results) => {
+        if (err) {
+            throw err;
+        }
+        res.send(results);
+    })
+})
 
 
 //     con.query(sql, (err, results) => {

@@ -2,6 +2,25 @@
   background-color: steelblue;
   min-width: 100vw;
   min-height: 100vh;
+  &__nav {
+    height: 100px;
+    background-color: lightcoral;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    &__filter {
+        font-size: 18px;
+        margin: 20px;
+        span {
+            padding: 0 7px;
+            color: white;
+        }
+    }
+    &_reset {
+      margin: 10px;
+  }
+    
+}
   &_list {
     display: flex;
     justify-content: center;
