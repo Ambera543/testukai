@@ -11,6 +11,16 @@ function Jewely({ jewelry, modal }) {
   // else return "no";}
 
   const total = jewelry.quantity * jewelry.price;
+//   const date =parseInt(jewelry.last_order, 10)
+// const dateOnly = (data) => {
+//     return data.map(j => {
+//         j.last_order = j.last_order.slice(0, 10);
+//         return j;
+//     });
+// }
+ const year =new Date(jewelry.last_order).getFullYear();
+ const month= new Date(jewelry.last_order).getMonth();
+ const day = new Date(jewelry.last_order).getDate();
 
   return (
     <div>
@@ -30,7 +40,7 @@ function Jewely({ jewelry, modal }) {
           <td>{jewelry.quantity}</td>
           <td>{jewelry.price}</td>
           <td>{total.toFixed(2)}</td>
-          <td>{new Date(jewelry.last_order).getFullYear()}</td>
+          <td>{year}-{month}-{day}</td>
           <td> Yes</td>
           <td>
             <button onClick={showEdit}>Edit</button>
