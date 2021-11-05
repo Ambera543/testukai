@@ -128,7 +128,7 @@ app.get('/jewelry-product', (req, res) => {
         res.send(results);
     })
 })
-// rodo tik tam tikro tipo gyvunus
+// rodo tik tam tikro tipo produktus
 app.get('/jewelry-filter/:t', (req, res) => {
     const sql = `
         SELECT *
