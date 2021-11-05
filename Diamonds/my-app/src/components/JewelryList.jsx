@@ -4,7 +4,7 @@ import Jewely from "./Jewely"
 function JewelryList({jewelrys, modal}) {
 
     return (
-        <div className="container">
+        <div className="jewelry_list">
             {jewelrys.map(jewely => <Jewely key={jewely.id} jewelry={jewely} modal={modal}></Jewely>)}
         </div>
     )
@@ -14,9 +14,3 @@ function JewelryList({jewelrys, modal}) {
 export default JewelryList;
 
 
-
-//     quantity: "",
-//     price: "",
-//     in_stock: "",
-//   last_order: ""</h1>
-//   }

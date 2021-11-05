@@ -22,7 +22,7 @@ function JewelNav ({ products, filter, reset, search }) {
 
   return (
     <div className="Jewel_nav">
-      <div className="Jewel_nav_filter">
+      {/* <div className="Jewel_nav_filter">
         <span>Product Filter</span>
         <select onChange={selectFilter} value={filterValue}>
           <option value="">Select Product</option>
@@ -32,7 +32,7 @@ function JewelNav ({ products, filter, reset, search }) {
             </option>)
                }
         </select>
-      </div>
+      </div> */}
       <div className="Jewel_nav_filter">
         <span>Product Search</span>
         <input onChange={handleSearchValue} value={searchValue}></input>
