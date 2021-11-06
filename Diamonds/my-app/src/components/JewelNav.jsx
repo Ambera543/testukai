@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function JewelNav ({ products, filter, reset, search }) {
+function JewelNav({ products, filter, reset, search }) {
   const [filterValue, setFilterValue] = useState("");
   const [searchValue, setSearchValue] = useState("");
 
@@ -22,17 +22,17 @@ function JewelNav ({ products, filter, reset, search }) {
 
   return (
     <div className="Jewel_nav">
-      {/* <div className="Jewel_nav_filter">
+      <div className="Jewel_nav_filter">
         <span>Product Filter</span>
         <select onChange={selectFilter} value={filterValue}>
           <option value="">Select Product</option>
-          {
-          products.map(t => <option key={t.product} value={t.product}>
+          {products.map((t) => (
+            <option key={t.product} value={t.product}>
               {t.product}
-            </option>)
-               }
+            </option>
+          ))}
         </select>
-      </div> */}
+      </div>
       <div className="Jewel_nav_filter">
         <span>Product Search</span>
         <input onChange={handleSearchValue} value={searchValue}></input>
