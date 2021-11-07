@@ -15,7 +15,7 @@ function JewelryModal({ showModal, hide, jewelry, edit, remove }) {
       quantity: jewelry.quantity,
       price: jewelry.price,
       in_stock: jewelry.in_stock,
-      last_order: jewelry.last_order.slice(0, 10),
+      last_order: jewelry.last_order.slice(0,10),
     });
   }, [jewelry]);
 

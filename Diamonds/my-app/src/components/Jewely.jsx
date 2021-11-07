@@ -23,9 +23,9 @@ function Jewely({ jewelry, modal }) {
   //  const day = new Date(jewelry.last_order).getDate();
 
   return (
-    <div>
-      <table>
-<th>
+    <div className="diamonds">
+      {/* <table>
+<th> */}
         <div className="diamonds_list_jewelry_product">Product: {jewelry.product}</div>
         <div className="diamonds_list_jewelry_quantity">Quantity: {jewelry.quantity}</div>
         <div className="diamonds_list_jewelry_price">Price: {jewelry.price}</div>
@@ -35,8 +35,8 @@ function Jewely({ jewelry, modal }) {
          <div> In Stock? {jewelry.in_stock}</div>
         <button onClick={showEdit}>Edit</button>
         <button onClick={showRemove}>Delete</button>
-        </th>
-      </table>
+        {/* </th>
+      </table> */}
     </div>
   );
 }
@@ -57,11 +57,9 @@ export default Jewely;
 
 //         </table>
 
-{
-  /* <td>{jewelry.product}</td>
-<td>{jewelry.quantity}</td>
-<td>{jewelry.price}</td>
-<td>{total.toFixed(2)}</td>
-<td>{year}-{month}-{day}</td>
-<td> Yes</td> */
-}
+// {/* <td>{jewelry.product}</td>
+// <td>{jewelry.quantity}</td>
+// <td>{jewelry.price}</td>
+// <td>{total.toFixed(2)}</td>
+// <td>{year}-{month}-{day}</td>
+// <td> Yes</td> */}

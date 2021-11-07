@@ -34,6 +34,7 @@
     padding: 10px;
   }
 }
-.table, th, td {
-    border:1px groove grey;
+.table, th {
+    border:3px solid grey;
+    border-radius: 10px;
   }

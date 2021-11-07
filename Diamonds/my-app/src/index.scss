@@ -1,6 +1,6 @@
 @import "App.scss";
 
-body {
+.body {
   margin: 0;
   display: flex;
   justify-content: center;
@@ -12,10 +12,11 @@ body {
   // flex-direction: column-reverse;
 }
 
-// .diamonds{
+.diamonds{
+  border:3px solid grey;
+  border-radius: 10px;
 
-
-// }
+ }
 
 // .pink {
 //   color: pink;
