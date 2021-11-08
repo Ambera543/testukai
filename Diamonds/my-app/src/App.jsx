@@ -24,8 +24,10 @@ function App() {
 
   const dateOnly = (data) => {
     return data.map((a) => {
-    a.last_order = a.last_order.slice(0, 10);
+    // a.last_order = a.last_order.slice(0, 10);
+    console.log(data);
       return a;
+      
     });
   };
 
@@ -109,14 +111,14 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App">{products &&
       <JewelNav
-        product={products}
+        products={products}
         search={setSearchBy}
         filter={setFilterBy}
         sort={setSortBy}
         reset={reset}
-      ></JewelNav>
+      ></JewelNav>}
       {jewelrys && (
         <JewelryList jewelrys={jewelrys} modal={modal}></JewelryList>
       )}
