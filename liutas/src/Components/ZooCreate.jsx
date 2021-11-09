@@ -41,7 +41,7 @@ function ZooCreate({create}) {
             <div className="zoo_form_input">
             <span>Born date</span><input type="date" value={input.born} onChange={(e) => formControl(e, 'born')} />
             </div>
-            <div className="zoo_form_input">
+            <div className="zoo_form_input_button">
             <button onClick={handleCreate}>Add</button>
             </div>
         </div>
