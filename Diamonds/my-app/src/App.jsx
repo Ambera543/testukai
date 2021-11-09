@@ -24,7 +24,7 @@ function App() {
 
   const dateOnly = (data) => {
     return data.map((a) => {
-    // a.last_order = a.last_order.slice(0, 10);
+    a.last_order = a.last_order.slice(0, 10);
     console.log(data);
       return a;
       
@@ -52,7 +52,7 @@ function App() {
         .get("http://localhost:3003/jewelry-filter/" + filterBy)
         .then((res) => {
           setJewelrys(dateOnly(res.data));
-        });
+        }).catch(err=>console.log(err));
     }
   }, [filterBy]);
 
@@ -68,14 +68,14 @@ function App() {
         .get("http://localhost:3003/jewelry-product/?s=" + searchBy)
         .then((res) => {
           setJewelrys(dateOnly(res.data));
-        });
+        }).catch(err=>console.log(err));
     }
   }, [searchBy]);
 
   useEffect(() => {
     axios.get("http://localhost:3003/jewelry-product/").then((res) => {
-      setProducts(dateOnly(res.data));
-    });
+      setProducts((res.data));
+    }).catch(err=>console.log(err));
   }, [lastUpdate]);
 
   const create = (jewelry) => {
