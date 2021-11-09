@@ -1,11 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ZooCreate from "./Components/ZooCreate";
 import ZooList from "./Components/ZooList";
 import ZooModal from "./Components/ZooModal";
 // import ZooAnimal from "./Components/ZooAnimal";
 import ZooNav from "./Components/ZooNav";
 import animalSort from "./Common/animalSort";
+import ZooStat from "./Components/ZooStat";
+import ZooMsg from "./Components/ZooMsg.jsx";
 
 function App() {
   const [animal, setAnimal] = useState([]);
@@ -21,8 +23,15 @@ function App() {
   const [types, setTypes] = useState([]);
   const [filterBy, setFilterBy] = useState("");
   const [searchBy, setSearchBy] = useState("");
+  // const [sortBy, setSortBy] = useState('')
+  const sortBy = useRef('');
 
-  const [sortBy, setSortBy] = useState("");
+  const [stat, setStat] = useState({
+    count: 0,
+    weight: 0,
+    average: 0
+})
+const [groupStat, setGroupStat] = useState([]);
 
   const dateOnly = (data) => {
     return data.map((a) => {
@@ -30,24 +39,41 @@ function App() {
       return a;
     });
   };
+  const [showMsg, setShowMsg] = useState(false);
+  const msg = useRef('labas');
+
+
+  const addMsg = (text) => {
+    msg.current = text;
+    setShowMsg(true);
+    setTimeout(() => {clearMsg()}, 2000);
+}
+
+const clearMsg = () => {
+    setShowMsg(false)
+}
 
   // const sort = (by) => {
   //     setAnimals(animalSort(animals, by));
   //     setSortBy(by);
   // }
 
-  useEffect(() => {
-    if (sortBy) {
-      setAnimal(animalSort(animal, sortBy));
-    }
-  }, [sortBy]);
+  // useEffect(() => {
+  //   if (sortBy) {
+  //     setAnimal(animalSort(animal, sortBy));
+  //   }
+  // }, [sortBy]);
+  const sort = (by) => {
+    setAnimal(animalSort(animal, by));
+    sortBy.current = by;
+}
 
   useEffect(() => {
     if (filterBy) {
       axios
         .get("http://localhost:3003/animals-filter/" + filterBy)
         .then((res) => {
-          setAnimal(dateOnly(res.data));
+          setAnimal(animalSort(dateOnly(res.data), sortBy.current));
           console.log(res.data);
         });
     }
@@ -58,7 +84,7 @@ function App() {
       axios
         .get("http://localhost:3003/animals-name/?s=" + searchBy)
         .then((res) => {
-          setAnimal(dateOnly(res.data));
+          setAnimal(animalSort(dateOnly(res.data), sortBy.current));
           console.log(res.data);
         });
     }
@@ -67,7 +93,7 @@ function App() {
   useEffect(() => {
     axios.get("http://localhost:3003/animals").then((res) => {
       // setAnimal(animalSort(dateOnly(res.data), sortBy));
-      setAnimal(dateOnly(res.data));
+      setAnimal(animalSort(dateOnly(res.data), sortBy.current));
       console.log(res.data);
     });
   }, [lastUpdate]);
@@ -78,10 +104,23 @@ function App() {
       console.log(res.data);
     });
   }, [lastUpdate]);
+  useEffect(() => {
+    axios.get('http://localhost:3003/stat')
+        .then(res => {
+            setStat(res.data[0]);
+        })
+}, [lastUpdate])
+
+useEffect(() => {
+    axios.get('http://localhost:3003/group-stat')
+        .then(res => {
+            setGroupStat(res.data);
+        })
+}, [lastUpdate])
 
   const create = (animal) => {
     axios.post("http://localhost:3003/animals", animal).then(() => {
-  
+      addMsg('Animal was added.')
       setLastUpdate(Date.now());
     });
   };
@@ -115,11 +154,13 @@ function App() {
 
   return (
     <div className="zoo">
+          <ZooMsg msg={msg.current} showMsg={showMsg}></ZooMsg>
+        <ZooStat stat={stat} groupStat={groupStat}></ZooStat>
       <ZooNav
         types={types}
         search={setSearchBy}
         filter={setFilterBy}
-        sort={setSortBy}
+        sort={sort}
         reset={reset}
       ></ZooNav>
       <ZooCreate create={create}></ZooCreate>

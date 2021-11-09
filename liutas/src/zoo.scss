@@ -99,7 +99,8 @@
         outline: none;
       }
       button {
-        margin-left: 15px;
+        margin-left: 90%;
+        
       }
     }
   }
@@ -118,4 +119,36 @@
         width: 80vw;
     }
 }
+&_stat {
+  padding: 20px;
+  color: ghostwhite;
+  span {
+      padding: 0 10px;
+  }
+  &_gstat {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      color: ghostwhite;
+      span {
+          padding: 5px;
+          margin: 5px;
+          border: 1px solid white;
+      }
+  }
 }
+&_msg {
+  background-color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s;
+  overflow: hidden;
+  span {
+      padding: 5px;
+      margin: 5px;
+      color: tan;
+  }
+}
+}
+
