@@ -322,3 +322,22 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+
+.hello-menu{
+  padding: 20px;
+  background-color: chocolate;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  li{
+    list-style: none;
+    a{
+    color: greenyellow;
+    padding: 15px;
+    text-decoration: none;
+    &:hover{
+      color: rgb(84, 134, 9);
+      transition: all 0.3s;
+    }
+  }}
+}

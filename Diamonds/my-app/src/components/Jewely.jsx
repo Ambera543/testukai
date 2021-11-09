@@ -49,7 +49,7 @@ function Jewely({ jewelry, modal }) {
                   <td>{jewelry.price}</td>
                   <td>{total.toFixed(2)}</td>
                   <td>
-                  { last}
+                  {last}
                   </td>
                   <td> Yes</td>
                   <td>
