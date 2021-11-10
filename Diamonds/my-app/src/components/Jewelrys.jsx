@@ -28,7 +28,7 @@ function Jewelrys({ create }) {
   console.log(handleCreate);
 
   return (
-    <div className="jewelry_form">
+    <div className="jewelry_form col-2">
       <h2>Add new jewelry</h2>
 
       <div className="jewelry_form_input">
@@ -76,6 +76,7 @@ function Jewelrys({ create }) {
         <button onClick={handleCreate}>Add</button>
       </div>
     </div>
+ 
   );
 }
 

@@ -3,9 +3,9 @@ import Jewely from "./Jewely";
 function JewelryList({ jewelrys, modal }) {
   return (
     <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-md-12">
-          <div className="card">
+      <div className="row justify-content-left">
+        <div className="col-12">
+    
             <div className="card-header">Jewelry</div>
 
             <div className="card-body">
@@ -32,7 +32,7 @@ function JewelryList({ jewelrys, modal }) {
           </div>
         </div>
       </div>
-    </div>
+  
   );
 }
 
