@@ -21,6 +21,7 @@ function App() {
   });
 
   const [sortBy, setSortBy] = useState("");
+  const [products, setProducts] = useState([]);
 
   const dateOnly = (data) => {
     return data.map((a) => {
@@ -39,10 +40,11 @@ function App() {
   useEffect(() => {
     axios.get("http://localhost:3003/jewelry").then((res) => {
       setJewelrys(res.data);
+      setProducts(res.data.filter(a=>a.product));
     });
   }, [lastUpdate]);
 
-  const [products, setProducts] = useState([]);
+  
   const [filterBy, setFilterBy] = useState("");
   const [searchBy, setSearchBy] = useState("");
 
@@ -72,11 +74,11 @@ function App() {
     }
   }, [searchBy]);
 
-  useEffect(() => {
-    axios.get("http://localhost:3003/jewelry-product/").then((res) => {
-      setProducts((res.data));
-    }).catch(err=>console.log(err));
-  }, [lastUpdate]);
+  // useEffect(() => {
+  //   axios.get("http://localhost:3003/jewelry-product/").then((res) => {
+  //     setProducts((res.data));
+  //   }).catch(err=>console.log(err));
+  // }, [lastUpdate]);
 
   const create = (jewelry) => {
     axios.post("http://localhost:3003/jewelry", jewelry).then(() => {

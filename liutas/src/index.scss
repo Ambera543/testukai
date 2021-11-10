@@ -363,3 +363,23 @@ h1 {
       }
   }
 }
+
+.context{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: green;
+
+
+}
+.family{
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px solid grey;
+
+  h2{
+    color: black;
+  }
+
+}

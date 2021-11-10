@@ -116,18 +116,18 @@ app.delete('/jewelry/:id', (req, res) => {
 // Randa visus skirtingus produktus
 // SELECT DISTINCT column1, column2, ...
 // FROM table_name;
-app.get('/jewelry-product', (req, res) => {
-    const sql = `
-        SELECT DISTINCT product
-        FROM jewelry
-    `;
-    con.query(sql, (err, results) => {
-        if (err) {
-            throw err;
-        }
-        res.send(results);
-    })
-})
+// app.get('/jewelry-product', (req, res) => {
+//     const sql = `
+//         SELECT DISTINCT product
+//         FROM jewelry
+//     `;
+//     con.query(sql, (err, results) => {
+//         if (err) {
+//             throw err;
+//         }
+//         res.send(results);
+//     })
+// })
 // rodo tik tam tikro tipo produktus
 app.get('/jewelry-filter/:t', (req, res) => {
     const sql = `
