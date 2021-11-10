@@ -67,7 +67,7 @@ function App() {
       axios
         .get("http://localhost:3003/jewelry-product/?s=" + searchBy)
         .then((res) => {
-          setJewelrys(dateOnly(res.data));
+          setJewelrys((res.data));
         }).catch(err=>console.log(err));
     }
   }, [searchBy]);

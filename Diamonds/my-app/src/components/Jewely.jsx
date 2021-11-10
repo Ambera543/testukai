@@ -6,12 +6,12 @@ function Jewely({ jewelry, modal }) {
   const showRemove = () => {
     modal(jewelry);
   };
-  // function in_stock() {
-  // if (jewelry.in_stock > 0){return "yes";}
-  // else return "no";}
+  function in_stock() {
+  if (jewelry.in_stock > 0){return "yes";}
+  else return "no";}
 
   const total = jewelry.quantity * jewelry.price;
-  const last = jewelry.last_order.slice(0,10) 
+  const last = jewelry.last_order.slice(0, 10);
   //   const date =parseInt(jewelry.last_order, 10)
   // const dateOnly = (data) => {
   //     return data.map(j => {
@@ -24,47 +24,20 @@ function Jewely({ jewelry, modal }) {
   // const day = new Date(jewelry.last_order).getDate();
 
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-md-8">
-          <div className="card">
-            <div className="card-header">Jewelry</div>
-
-            <div className="card-body">
-              <table className="table">
-                <tr>
-                  <th> Product</th>
-                  <th> Quantity</th>
-                  <th> Price</th>
-                  <th>Total value</th>
-                  <th> Last order</th>
-                  <th> In Stock?</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
-                </tr>
-
-                <tr>
-                  <td>{jewelry.product}</td>
-                  <td>{jewelry.quantity}</td>
-                  <td>{jewelry.price}</td>
-                  <td>{total.toFixed(2)}</td>
-                  <td>
-                  {last}
-                  </td>
-                  <td> Yes</td>
-                  <td>
-                    <button onClick={showEdit}>Edit</button>
-                  </td>
-                  <td>
-                    <button onClick={showRemove}>Delete</button>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <tr>
+      <td>{jewelry.product}</td>
+      <td>{jewelry.quantity}</td>
+      <td>{jewelry.price}</td>
+      <td>{total.toFixed(2)}</td>
+      <td>{last}</td>
+      <td> {in_stock()}</td>
+      <td>
+        <button className="btn" onClick={showEdit}>Edit</button>
+      </td>
+      <td>
+        <button onClick={showRemove}>Delete</button>
+      </td>
+    </tr>
 
     //     <div className="diamonds_list_jewelry_product">Product: {jewelry.product}</div>
     //     <div className="diamonds_list_jewelry_quantity">Quantity: {jewelry.quantity}</div>
