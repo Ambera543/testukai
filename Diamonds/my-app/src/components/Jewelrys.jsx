@@ -40,7 +40,7 @@ function Jewelrys({ create }) {
         />
       </div>
       <div className="jewelry_form_input">
-        <span>Quantity</span>
+        <span>Quantity </span>
         <input
           type="text"
           value={inputs.quantity}
@@ -56,7 +56,7 @@ function Jewelrys({ create }) {
         />
       </div>
       <div className="jewelry_form_input">
-        <span>In stock</span>
+        <span>In stock </span>
         <input
           type="text"
           value={inputs.in_stock}

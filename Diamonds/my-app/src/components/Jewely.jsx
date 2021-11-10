@@ -32,7 +32,7 @@ function Jewely({ jewelry, modal }) {
       <td>{last}</td>
       <td> {in_stock()}</td>
       <td>
-        <button className="btn" onClick={showEdit}>Edit</button>
+        <button onClick={showEdit}>Edit</button>
       </td>
       <td>
         <button onClick={showRemove}>Delete</button>
