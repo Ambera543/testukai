@@ -1,5 +1,8 @@
 import {BrowserRouter as Router, Link, Routes, Route} from "react-router-dom"
 import RouterBasic from "./Components/RouterBasic";
+import RouterAfrica from "./Components/RouterAfrica";
+import RouterAustralia from "./Components/RouterAustralia";
+
 
 function App(){
 
@@ -14,7 +17,9 @@ function App(){
        <Routes>
 
       
-<Route path="/" element={<RouterBasic/>}>aaa</Route>
+<Route path="/" element={<RouterBasic/>}></Route>
+<Route path="/africa" element={<RouterAfrica/>}></Route>
+<Route path="/australia" element={<RouterAustralia/>}></Route>
 </Routes>
         </Router>
     )
