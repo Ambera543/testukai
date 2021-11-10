@@ -7,7 +7,7 @@ import RouterAntarctica from "./Components/RouterAntarctica";
 import RouterPenguin from "./Components/RouterPenguin";
 import RouterPolarBear from "./Components/RouterPolarBear";
 import RouterSeal from "./Components/RouterSeal";
-import RouterCustomLink from "./Components/RouterCustomLink";
+
 
 function App() {
   return (
