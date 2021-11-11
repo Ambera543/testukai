@@ -18,7 +18,7 @@
       font-size: 18px;
       margin: 20px;
       span {
-        padding: 0 7px;
+        padding: 0 20px;
         color: white;
       }
     }
@@ -30,12 +30,12 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: wrap;
+    flex-direction: row;
     padding: 10px;
   }
   &_form {
     display: flex;
-    float: right;
+    float: left;
     justify-content: flex-start;
     align-items: flex-start;
     background: paleturquoise;
@@ -53,6 +53,7 @@
     }
     &_input {
       width: 50vw;
+      
       margin: 25px 0;
     }
   }

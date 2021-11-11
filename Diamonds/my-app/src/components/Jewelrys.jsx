@@ -28,7 +28,7 @@ function Jewelrys({ create }) {
   console.log(handleCreate);
 
   return (
-    <div className="jewelry_form col-2">
+    <div className="container flex-child jewelry_form col-3">
       <h2>Add new jewelry</h2>
 
       <div className="jewelry_form_input">

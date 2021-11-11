@@ -17,7 +17,10 @@ function JewelNav({ products, filter, reset, search }) {
 
   const resetHandler = () => {
     reset();
-    setFilterValue("");
+    setFilterValue('');
+    setSearchValue('');
+    // setSortValue('');
+    // sort('');
   };
 
   return (

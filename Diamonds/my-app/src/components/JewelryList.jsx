@@ -2,9 +2,9 @@ import Jewely from "./Jewely";
 
 function JewelryList({ jewelrys, modal }) {
   return (
-    <div className="container">
-      <div className="row justify-content-left">
-        <div className="col-12">
+    <div className="container flex-child">
+      <div className="row">
+        <div className="col-10">
     
             <div className="card-header">Jewelry</div>
 

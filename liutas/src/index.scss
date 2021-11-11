@@ -383,3 +383,12 @@ h1 {
   }
 
 }
+.reducer {
+  &_button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+      font-size: 30px;
+  }
+}
