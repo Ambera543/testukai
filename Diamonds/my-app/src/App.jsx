@@ -36,6 +36,10 @@ function App() {
   //     setAnimals(animalSort(animals, by));
   //     setSortBy(by);
   // }
+  const reset = () => {
+    setLastUpdate(Date.now());
+  };
+
 
   useEffect(() => {
     axios.get("http://localhost:3003/jewelry").then((res) => {
@@ -50,10 +54,16 @@ function App() {
 
   useEffect(() => {
     if (filterBy) {
+      if (filterBy==='all'){
+        reset()
+      }
+      
       axios
         .get("http://localhost:3003/jewelry-filter/" + filterBy)
-        .then((res) => {
+        .then((res) => { 
+        
           setJewelrys(dateOnly(res.data));
+          
         }).catch(err=>console.log(err));
     }
   }, [filterBy]);
@@ -100,9 +110,7 @@ function App() {
     });
   };
 
-  const reset = () => {
-    setLastUpdate(Date.now());
-  };
+
   const modal = (jewelry) => {
     setShowModal(true);
     setModalJewelry(jewelry);

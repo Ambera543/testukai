@@ -9,26 +9,28 @@ function JewelNav({ products, filter, reset, search }) {
     filter(e.target.value);
   };
 
-  const handleSearchValue = (e) => {
-    console.log(e);
-    setSearchValue(e.target.value);
-    search(e.target.value);
-  };
-
   const resetHandler = () => {
     reset();
-    setFilterValue('');
-    setSearchValue('');
+    setFilterValue("");
+    setSearchValue("");
     // setSortValue('');
     // sort('');
   };
+  const handleSearchValue = (e) => {
+    if(e.target.value===''){
+      resetHandler()
+    }
+    else{
+    setSearchValue(e.target.value);
+    search(e.target.value);
+  }};
 
   return (
     <div className="Jewel_nav">
       <div className="Jewel_nav_filter">
         <span>Product Filter </span>
         <select onChange={selectFilter} value={filterValue}>
-          <option value="">Select Product</option>
+          <option value="all">Select Product</option>
           {products.map((t) => (
             <option key={t.product} value={t.product}>
               {t.product}
