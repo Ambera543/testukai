@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import List from "./Components/List";
 import Modal from "./Components/Modal";
+import Create from "./Components/Create";
 
 function App() {
   const [nuts, setNuts] = useState([]);
@@ -18,10 +19,18 @@ function App() {
   useEffect(() => {
     axios.get("http://localhost:3003/nuts").then((res) => {
       setNuts(res.data);
-    });
-    // .catch((err) => console.log(err));
-    // console.log(nuts);
+    })
+    .catch((err) => console.log(err));
   }, [lastUpdate]);
+
+  const create = nut => {
+    axios.post('http://localhost:3003/animals', nut)
+        .then(() => {
+            setLastUpdate(Date.now());
+        })
+        .catch((err) => console.log(err));
+}
+
   //Update React
   const edit = (nuts, id) => {
     setShowModal(false);
@@ -36,7 +45,6 @@ function App() {
   const remove = (id) => {
     setShowModal(false);
     axios.delete("http://localhost:3003/nuts/" + id).then((res) => {
-      console.log(res.data);
       setLastUpdate(Date.now());
     });
   };
@@ -75,6 +83,7 @@ function App() {
                     edit={edit}
                     remove={remove}
                   />
+                  <Create create={create}></Create>
                 </table>
               </div>
             </div>

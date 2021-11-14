@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Modal({ showModal, hide, modalInputs, edit }) {
+function Modal({ showModal, hide, modalInputs, edit, remove, nuts }) {
   const [inputs, setInputs] = useState({
     product: "",
     price: "",
@@ -19,7 +19,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
         product: modalInputs.product,
         price: modalInputs.price,
         quantity: modalInputs.quantity,
-        last_received: modalInputs.last_received
+        last_received: modalInputs.last_received.slice(0,10)
     });
   }, [modalInputs]);
 
@@ -29,7 +29,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
         product: inputs.product,
         price: inputs.price,
         quantity: inputs.quantity,
-        last_received: inputs.last_received
+        last_received: inputs.last_received.slice(0,10)
       },
       modalInputs.id
     );
@@ -52,7 +52,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title" id="exampleModalLabel">
-              Edit product
+              Edit or delete product
             </h5>
             <button
               type="button"
@@ -114,7 +114,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                   className="form-control"
                   type="text"
                   id="last_received"
-                  value={inputs.last_received}
+                  value={inputs.last_received.slice(0,10)}
                   onChange={(e) => control(e, "last_received")}
                   placeholder="Enter last_received"
                 />
@@ -135,6 +135,12 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                   onClick={handleEdit}
                 >
                   Save changes
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                   onClick={() =>remove(nuts.id)}>
+                  Delete
                 </button>
               </div>
             </form>

@@ -1,4 +1,4 @@
-function Item({ data, modal }) {
+function Nuts({ data, modal }) {
 
     const showEdit = () => {
       modal(data);
@@ -13,8 +13,8 @@ function Item({ data, modal }) {
         <td>{data.product}</td>
         <td>{data.price}</td>
         <td>{data.quantity}</td>
-        <td>{data.last_received}</td>
-        <button className="btn btn-primary-spacing" onClick={showEdit}>
+        <td>{data.last_received.slice(0,10)}</td>
+        <button className="btn btn-primary" onClick={showEdit}>
           Edit
         </button>
         <button className="btn btn-primary" onClick={showDelete}>
@@ -24,4 +24,4 @@ function Item({ data, modal }) {
     );
   }
   
-  export default Item;
+  export default Nuts;
