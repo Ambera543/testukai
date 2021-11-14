@@ -15,6 +15,11 @@ function App() {
     quantity: "",
     last_received: "",
   });
+
+  
+  const reset = () => {
+    setLastUpdate(Date.now());
+}
   //Read React
   useEffect(() => {
     axios.get("http://localhost:3003/nuts").then((res) => {
@@ -46,8 +51,10 @@ function App() {
     setShowModal(false);
     axios.delete("http://localhost:3003/nuts/" + id).then((res) => {
       setLastUpdate(Date.now());
-    });
+    }) 
+    .catch((err) => console.log(err));
   };
+
 
   const modal = (nuts) => {
     setShowModal(true);
@@ -61,9 +68,9 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <div className="row justify-content-center">
-            <div className="card">
-              <div className="card-header">List of nuts</div>
+        <div className="row justify-content-left float-left">
+            <div className="card col-12">
+              <div className="card-header ">List of nuts</div>
               <div className="card-body">
                 <table className="table">
                   <tr>
@@ -87,7 +94,7 @@ function App() {
               </div>
             </div>
           </div>
-          <Create create={create}></Create>
+          <Create className="row justify-content-right" create={create}></Create>
         </div>
       </div>
   
