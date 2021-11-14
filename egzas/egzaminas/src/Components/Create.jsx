@@ -29,9 +29,9 @@ const handleCreate = () => {
     <div className="container">
          <form className="px-4">
     <div class="form-group">
-    <h2>Add new nut</h2>
+    <h3>Add new nut</h3>
     <div className="form-group">
-      <span>Product </span>
+      <div>Product </div>
       <input
         type="text"
         value={inputs.product}
@@ -39,7 +39,7 @@ const handleCreate = () => {
       />
     </div>
     <div className="form-group">
-      <span>Quantity </span>
+      <div>Quantity </div>
       <input
         type="text"
         value={inputs.quantity}
@@ -47,7 +47,7 @@ const handleCreate = () => {
       />
     </div>
     <div className="form-group">
-      <span>Price </span>
+      <div>Price </div>
       <input
         type="text"
         value={inputs.price}
@@ -55,7 +55,7 @@ const handleCreate = () => {
       />
     </div>
     <div className="form-group">
-    <span>Last received </span>
+    <div>Last received </div>
       <input
         type="date"
         value={inputs.last_received}
