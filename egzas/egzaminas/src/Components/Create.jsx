@@ -27,7 +27,7 @@ const handleCreate = () => {
 
   return (
     <div className="container">
-         <form className="px-4 py-3">
+         <form className="px-4">
     <div class="form-group">
     <h2>Add new nut</h2>
     <div className="form-group">
@@ -62,10 +62,9 @@ const handleCreate = () => {
         onChange={(e) => formControl(e, "last_received")}
       />
     </div>
-
-    <div className="btn">
-      <button onClick={handleCreate}>Add</button>
-    </div>
+    
+      <button className="btn btn-primary" onClick={handleCreate}>Add</button>
+   
     </div>
     </form>
   </div>

@@ -14,10 +14,10 @@ function Nuts({ data, modal }) {
         <td>{data.price}</td>
         <td>{data.quantity}</td>
         <td>{data.last_received.slice(0,10)}</td>
-        <button className="btn btn-primary" onClick={showEdit}>
+        <button className="btn-sm btn-primary m-2" onClick={showEdit}>
           Edit
         </button>
-        <button className="btn btn-primary" onClick={showDelete}>
+        <button className="btn-sm btn-primary m-3" onClick={showDelete}>
           Delete
         </button>
       </tr>
