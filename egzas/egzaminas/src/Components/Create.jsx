@@ -26,10 +26,11 @@ const handleCreate = () => {
   console.log(handleCreate);
 
   return (
-    <div className="">
+    <div className="container">
+         <form className="px-4 py-3">
+    <div class="form-group">
     <h2>Add new nut</h2>
-
-    <div className="jewelry_form_input">
+    <div className="form-group">
       <span>Product </span>
       <input
         type="text"
@@ -37,7 +38,7 @@ const handleCreate = () => {
         onChange={(e) => formControl(e, "product")}
       />
     </div>
-    <div className="jewelry_form_input">
+    <div className="form-group">
       <span>Quantity </span>
       <input
         type="text"
@@ -45,7 +46,7 @@ const handleCreate = () => {
         onChange={(e) => formControl(e, "quantity")}
       />
     </div>
-    <div className="jewelry_form_input">
+    <div className="form-group">
       <span>Price </span>
       <input
         type="text"
@@ -53,17 +54,20 @@ const handleCreate = () => {
         onChange={(e) => formControl(e, "price")}
       />
     </div>
-    <div className="jewelry_form_input">
+    <div className="form-group">
+    <span>Last received </span>
       <input
-        type="text"
+        type="date"
         value={inputs.last_received}
         onChange={(e) => formControl(e, "last_received")}
       />
     </div>
 
-    <div className="btn btn-primary">
+    <div className="btn">
       <button onClick={handleCreate}>Add</button>
     </div>
+    </div>
+    </form>
   </div>
 
   )};

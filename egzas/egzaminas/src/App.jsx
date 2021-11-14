@@ -24,7 +24,7 @@ function App() {
   }, [lastUpdate]);
 
   const create = nut => {
-    axios.post('http://localhost:3003/animals', nut)
+    axios.post('http://localhost:3003/nuts', nut)
         .then(() => {
             setLastUpdate(Date.now());
         })
@@ -62,7 +62,6 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-md-8">
             <div className="card">
               <div className="card-header">List of nuts</div>
               <div className="card-body">
@@ -76,6 +75,7 @@ function App() {
                     <th>Delete</th>
                   </tr>
                   <List nuts={nuts} modal={modal} />
+                
                   <Modal
                     showModal={showModal}
                     modalInputs={modalInputs}
@@ -83,14 +83,14 @@ function App() {
                     edit={edit}
                     remove={remove}
                   />
-                  <Create create={create}></Create>
                 </table>
               </div>
             </div>
           </div>
+          <Create create={create}></Create>
         </div>
       </div>
-    </div>
+  
   );
 }
 

@@ -68,6 +68,25 @@ app.post('/nuts', (req, res) => {
         res.send(results);
     })
 })
+// create
+app.post('/nuts', (req, res) => {
+    const sql = `
+        INSERT INTO nuts 
+        (product, price, quantity, last_received)
+        VALUES (?, ?, ?, ?)
+    `;
+    con.query(sql, [
+        req.body.product,
+        req.body.price,
+        req.body.quantity,
+        req.body.last_received
+    ], (err, results) => {
+        if (err) {
+            throw err;
+        }
+        res.send(results);
+    })
+})
 
 //Update Node
 app.put('/nuts/:id', (req, res) => {
