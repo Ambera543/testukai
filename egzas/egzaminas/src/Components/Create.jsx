@@ -25,8 +25,8 @@ function Create({ create }) {
   console.log(handleCreate);
 
   return (
-    <div className="border-box">
-      <form className="px-4">
+    <div className="container bg-light">
+      <form className="mx-4">
         <div class="form-group">
           <h3>Add new nut</h3>
           <div className="form-group">

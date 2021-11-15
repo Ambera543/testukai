@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Modal({ showModal, hide, modalInputs, edit, remove, nuts }) {
+function Modal({ showModal, hide, modalInputs, edit }) {
   const [inputs, setInputs] = useState({
     product: "",
     price: "",
@@ -52,7 +52,7 @@ function Modal({ showModal, hide, modalInputs, edit, remove, nuts }) {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title" id="exampleModalLabel">
-              Edit or delete product
+              Edit product
             </h5>
             <button
               type="button"
@@ -135,13 +135,6 @@ function Modal({ showModal, hide, modalInputs, edit, remove, nuts }) {
                   onClick={handleEdit}
                 >
                   Save changes
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  onClick={() => remove(nuts.id)}
-                >
-                  Delete
                 </button>
               </div>
             </form>

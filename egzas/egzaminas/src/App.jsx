@@ -142,16 +142,14 @@ function App() {
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>
-                <List nuts={nuts} modal={modal} />
-
-                <Modal
+                <List nuts={nuts} modal={modal} remove={remove}/>
+              </table>
+              <Modal
                   showModal={showModal}
                   modalInputs={modalInputs}
                   hide={hide}
                   edit={edit}
-                  remove={remove}
                 />
-              </table>
             </div>
           </div>
         </div>
