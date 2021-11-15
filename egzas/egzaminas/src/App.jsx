@@ -34,7 +34,7 @@ function App() {
   useEffect(() => {
     axios.get("http://localhost:3003/nuts").then((res) => {
       setNuts(res.data);
-      setNuts(res.data.filter((a) => a.nut));
+      setNuts(res.data.filter((a) => a.nuts));
     });
   }, [lastUpdate]);
 
@@ -44,7 +44,7 @@ function App() {
         reset();
       }
       axios
-        .get("http://localhost:3003/jewelry-filter/" + filterBy)
+        .get("http://localhost:3003/nuts-filter/" + filterBy)
         .then((res) => {
           setNuts(dateOnly(res.data));
         })
