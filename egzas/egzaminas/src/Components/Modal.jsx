@@ -16,10 +16,10 @@ function Modal({ showModal, hide, modalInputs, edit, remove, nuts }) {
 
   useEffect(() => {
     setInputs({
-        product: modalInputs.product,
-        price: modalInputs.price,
-        quantity: modalInputs.quantity,
-        last_received: modalInputs.last_received.slice(0,10)
+      product: modalInputs.product,
+      price: modalInputs.price,
+      quantity: modalInputs.quantity,
+      last_received: modalInputs.last_received.slice(0, 10),
     });
   }, [modalInputs]);
 
@@ -29,7 +29,7 @@ function Modal({ showModal, hide, modalInputs, edit, remove, nuts }) {
         product: inputs.product,
         price: inputs.price,
         quantity: inputs.quantity,
-        last_received: inputs.last_received.slice(0,10)
+        last_received: inputs.last_received.slice(0, 10),
       },
       modalInputs.id
     );
@@ -68,7 +68,7 @@ function Modal({ showModal, hide, modalInputs, edit, remove, nuts }) {
             <form>
               <div className="form-group">
                 <label for="product" className="col-form-label">
-                 Product
+                  Product
                 </label>
                 <input
                   className="form-control"
@@ -108,13 +108,13 @@ function Modal({ showModal, hide, modalInputs, edit, remove, nuts }) {
 
               <div className="form-group">
                 <label for="" className="col-form-label">
-                Last Received
+                  Last Received
                 </label>
                 <input
                   className="form-control"
                   type="text"
                   id="last_received"
-                  value={inputs.last_received.slice(0,10)}
+                  value={inputs.last_received.slice(0, 10)}
                   onChange={(e) => control(e, "last_received")}
                   placeholder="Enter last_received"
                 />
@@ -139,7 +139,8 @@ function Modal({ showModal, hide, modalInputs, edit, remove, nuts }) {
                 <button
                   type="button"
                   className="btn btn-primary"
-                   onClick={() =>remove(nuts.id)}>
+                  onClick={() => remove(nuts.id)}
+                >
                   Delete
                 </button>
               </div>
