@@ -1,4 +1,4 @@
-import { ADD_DOMINO, ADD_LEFT, ADD_RIGHT, GET_DOMINOS } from "../Constants/dominoTypes";
+import { ADD_DOMINO, ADD_LEFT, ADD_RIGHT, GET_DOMINOS, SHOW_MESSAGE, HIDE_MESSAGE, RESET_LEFT_RIGHT } from "../Constants/dominoTypes";
 
 export function addLeft(payload) {
     return {
@@ -14,6 +14,12 @@ export function addRight(payload) {
     }
 }
 
+export function resetLeftRight() {
+    return {
+        type: RESET_LEFT_RIGHT
+    }
+}
+
 export function getDominos() {
     return {
         type: GET_DOMINOS,
@@ -26,3 +32,15 @@ export function addDomino(domino) {
         payload: domino
     }
 }
+
+export function showMessage(text) {
+    return {
+        type: SHOW_MESSAGE,
+        payload: text
+    }
+}
+
+export function hideMessage() {
+    return {
+        type: HIDE_MESSAGE
+    }}

@@ -1,5 +1,6 @@
 @import "App.scss";
-@import 'zoo';
+@import "zoo";
+@import "domino";
 
 body {
   margin: 0;
@@ -273,7 +274,6 @@ button {
     letter-spacing: 1px;
     color: lightskyblue;
     font-size: 10px;
-   
   }
   span {
     font-size: 22px;
@@ -289,7 +289,7 @@ button {
   justify-content: flex-start;
   align-items: center;
   padding: 10px;
- 
+
   .stats {
     letter-spacing: 1px;
     color: lightskyblue;
@@ -323,73 +323,71 @@ h1 {
   justify-content: center;
 }
 
-.hello-menu{
+.hello-menu {
   padding: 20px;
   background-color: chocolate;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
-  li{
+  li {
     list-style: none;
-    a{
-    color: greenyellow;
-    padding: 15px;
-    text-decoration: none;
-    &:hover{
-      color: rgb(84, 134, 9);
-      transition: all 0.3s;
+    a {
+      color: greenyellow;
+      padding: 15px;
+      text-decoration: none;
+      &:hover {
+        color: rgb(84, 134, 9);
+        transition: all 0.3s;
+      }
     }
-  }}
+  }
 }
 
 .antarctica {
   h2 {
-      color: darkcyan;
+    color: darkcyan;
   }
   &__menu {
-      padding: 20px;
-      background-color: darkturquoise;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      color: darkcyan;
-      li {
-          list-style: none;
-          a {
-              color: white;
-              padding: 0 15px;
-              text-decoration: none;
-          }
+    padding: 20px;
+    background-color: darkturquoise;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: darkcyan;
+    li {
+      list-style: none;
+      a {
+        color: white;
+        padding: 0 15px;
+        text-decoration: none;
       }
+    }
   }
 }
 
-.context{
+.context {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: green;
-
-
 }
-.family{
+.family {
   margin: 10px;
   padding: 20px;
   border-radius: 10px solid grey;
 
-  h2{
+  h2 {
     color: black;
   }
-
 }
 .reducer {
   &_button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 25px;
-      font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    font-size: 30px;
   }
 }
 
@@ -398,29 +396,48 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  &_table {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 70%;
+  }
+  &_msg {
+    background-color: deeppink;
+    padding: 20px 50px;
+    position: absolute;
+    top: 15px;
+    right: 10%;
+    transition: all 0.5s;
+    span {
+      color: white;
+    }
+  }
+
   &_create {
-      padding: 10px;
-      background-color: white;
-      border: 1px solid deeppink;
-      &_header {
-          padding: 15px;
-          font-size: 22px;
-          color: dodgerblue;
-          font-weight: bold;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid deeppink;
+    &_header {
+      padding: 15px;
+      font-size: 22px;
+      color: dodgerblue;
+      font-weight: bold;
+    }
+    &_body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      input {
+        width: 50px;
+        font-size: 30px;
+        border: 1px solid deeppink;
+        outline: none;
+        text-align: center;
+        margin-bottom: 20px;
       }
-      &_body {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          input {
-              width: 50px;
-              font-size: 30px;
-              border: 1px solid deeppink;
-              outline: none;
-              text-align: center;
-              margin-bottom: 20px;
-          }
-      }
+    }
   }
 }

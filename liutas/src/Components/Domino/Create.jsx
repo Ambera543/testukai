@@ -1,14 +1,11 @@
 import { useReducer } from 'react';
 import { addLeft, addRight } from '../../Action/domino';
-import { dominoPlateReducer } from '../../Reducer/dominoReducer';
+import { dominoPlateReducer, startPost } from '../../Reducer/dominoReducer';
+
+
 
 function Create({create}) {
-    const [plate, dispachPlate] = useReducer(dominoPlateReducer, {
-        left: 0,
-        leftErr: false,
-        right: 0,
-        rightErr: false
-    });
+    const [plate, dispachPlate] = useReducer(dominoPlateReducer,  startPos);
 
     const handleInput = (e, P) => {
         if ('L' === P) {
@@ -23,7 +20,8 @@ function Create({create}) {
         create({
             left: plate.left,
             right: plate.right
-        })
+        });
+        dispachPlate(resetLeftRight());
     }
 
     return (
