@@ -14,9 +14,8 @@ const con = mysql.createConnection({
     host: "localhost",
     user: "newuser",
     password: "",
-    database: "hr",
+    database: "hr"
 });
-
 con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
@@ -40,7 +39,7 @@ app.get('/duomenys', (req, res) => {
 app.post('/duomenys', (req, res) => {
     const sql = `
         INSERT INTO duomenys
-        (firstname, surname, address, phone_no, email, salary, started_working)
+        (firstname, surname, address, phone_no, email, salary, started_work)
         VALUES (?, ?, ?, ?)
     `;
     con.query(sql, [
@@ -50,7 +49,7 @@ app.post('/duomenys', (req, res) => {
         req.body.phone_no,
         req.body.email,
         req.body.salary,
-        req.body.started_working
+        req.body.started_work
     ], (err, results) => {
         if (err) {
             throw err;
@@ -63,7 +62,7 @@ app.post('/duomenys', (req, res) => {
 app.put('/duomenys/:id', (req, res) => {
     const sql = `
         UPDATE duomenys
-        SET firstname = ?, surname = ?, address =?, phone_no =?, email = ?, salary = ?, started_working = ?
+        SET firstname = ?, surname = ?, address =?, phone_no =?, email = ?, salary = ?, started_work = ?
         WHERE id = ?
     `;
     con.query(sql, [
@@ -73,7 +72,7 @@ app.put('/duomenys/:id', (req, res) => {
         req.body.phone_no,
         req.body.email,
         req.body.salary,
-        req.body.started_working,
+        req.body.started_work,
         req.params.id
     ], (err, results) => {
         if (err) {
@@ -131,5 +130,5 @@ app.get('/duomenys-surname', (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+//   console.log(`Example app listening at http://localhost:${port}`);
 });
