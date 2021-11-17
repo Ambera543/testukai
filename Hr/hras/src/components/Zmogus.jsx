@@ -1,4 +1,4 @@
-function Zmogus({ data, modal, remove }) {
+function Zmogus({ data, modal, remove}) {
   const showEdit = () => {
     modal(data);
   };
@@ -18,7 +18,7 @@ function Zmogus({ data, modal, remove }) {
         </button>
       </td>
       <td>
-        <button className="btn btn-primary" onClick={()=>remove(data.id)}>
+      <button className="btn btn-primary" onClick={() => remove(data.id)}>
           Delete
         </button>
       </td>
@@ -27,3 +27,4 @@ function Zmogus({ data, modal, remove }) {
 }
 
 export default Zmogus;
+// () => remove(data.id)

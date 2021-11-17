@@ -47,7 +47,6 @@ function Modal({ showModal, hide, modalInputs, edit }) {
   return (
     <div
       className="modal fade"
-    
       role="dialog"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
@@ -75,39 +74,30 @@ function Modal({ showModal, hide, modalInputs, edit }) {
           <div className="modal-body">
             <form>
               <div className="form-group">
-                <label className="col-form-label">
-                  Firstname
-                </label>
+                <label className="col-form-label">Firstname</label>
                 <input
                   className="form-control"
                   type="text"
-                
                   value={inputs.firstname}
                   onChange={(e) => control(e, "firstname")}
                   placeholder="Enter firstname"
                 />
               </div>
               <div className="form-group">
-                <label className="col-form-label">
-                  Surname
-                </label>
+                <label className="col-form-label">Surname</label>
                 <input
                   className="form-control"
                   type="text"
-                  
                   value={inputs.surname}
                   onChange={(e) => control(e, "surname")}
                   placeholder="Enter surname"
                 />
               </div>
               <div className="form-group">
-                <label className="col-form-label">
-                  Address
-                </label>
+                <label className="col-form-label">Address</label>
                 <input
                   className="form-control"
                   type="text"
-                
                   value={inputs.address}
                   onChange={(e) => control(e, "address")}
                   placeholder="Enter address"
@@ -115,52 +105,40 @@ function Modal({ showModal, hide, modalInputs, edit }) {
               </div>
 
               <div className="form-group">
-                <label className="col-form-label">
-                  Phone no.
-                </label>
+                <label className="col-form-label">Phone no.</label>
                 <input
                   className="form-control"
                   type="text"
-            
                   value={inputs.phone_no}
                   onChange={(e) => control(e, "phone_no")}
                   placeholder="Enter phone_no"
                 />
               </div>
               <div className="form-group">
-                <label  className="col-form-label">
-                  Email
-                </label>
+                <label className="col-form-label">Email</label>
                 <input
                   className="form-control"
                   type="text"
-              
                   value={inputs.email}
                   onChange={(e) => control(e, "email")}
                   placeholder="Enter email"
                 />
               </div>
               <div className="form-group">
-                <label className="col-form-label">
-                  Salary
-                </label>
+                <label className="col-form-label">Salary</label>
                 <input
                   className="form-control"
                   type="text"
-               
                   value={inputs.salary}
                   onChange={(e) => control(e, "salary")}
                   placeholder="Enter salary"
                 />
               </div>
               <div className="form-group">
-                <label className="col-form-label">
-                  Started work
-                </label>
+                <label className="col-form-label">Started work</label>
                 <input
                   className="form-control"
                   type="date"
-             
                   value={inputs.started_work.slice(0, 10)}
                   onChange={(e) => control(e, "started_work")}
                   placeholder="Enter started_work"
