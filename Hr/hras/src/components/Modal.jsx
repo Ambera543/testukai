@@ -47,7 +47,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
   return (
     <div
       className="modal fade"
-      id="exampleModal"
+    
       role="dialog"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
@@ -81,7 +81,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                 <input
                   className="form-control"
                   type="text"
-                  id="firstname"
+                
                   value={inputs.firstname}
                   onChange={(e) => control(e, "firstname")}
                   placeholder="Enter firstname"
@@ -94,7 +94,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                 <input
                   className="form-control"
                   type="text"
-                  id="surname"
+                  
                   value={inputs.surname}
                   onChange={(e) => control(e, "surname")}
                   placeholder="Enter surname"
@@ -107,7 +107,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                 <input
                   className="form-control"
                   type="text"
-                  id="address"
+                
                   value={inputs.address}
                   onChange={(e) => control(e, "address")}
                   placeholder="Enter address"
@@ -121,7 +121,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                 <input
                   className="form-control"
                   type="text"
-                  id="phone_no"
+            
                   value={inputs.phone_no}
                   onChange={(e) => control(e, "phone_no")}
                   placeholder="Enter phone_no"
@@ -134,7 +134,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                 <input
                   className="form-control"
                   type="text"
-                  id="email"
+              
                   value={inputs.email}
                   onChange={(e) => control(e, "email")}
                   placeholder="Enter email"
@@ -147,7 +147,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                 <input
                   className="form-control"
                   type="text"
-                  id="phone_no,"
+               
                   value={inputs.salary}
                   onChange={(e) => control(e, "salary")}
                   placeholder="Enter salary"
@@ -160,7 +160,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                 <input
                   className="form-control"
                   type="date"
-                  id="started_work"
+             
                   value={inputs.started_work.slice(0, 10)}
                   onChange={(e) => control(e, "started_work")}
                   placeholder="Enter started_work"

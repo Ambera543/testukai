@@ -74,7 +74,7 @@ const create = zmogus => {
   return (
     <div className="App">
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="row justify-content-left float-left">
           <div className="col-md-12">
             <div className="card">
               <div className="card-header">List of People</div>
@@ -82,7 +82,7 @@ const create = zmogus => {
                 <table className="table">
                   <tbody>
                   <tr>
-                    <th> Firstname</th>
+                    <th>Firstname</th>
                     <th>Surname</th>
                     <th>Address</th>
                     <th>Phone no.</th>

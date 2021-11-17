@@ -30,7 +30,7 @@ function Create({ create }) {
   };
 
   return (
-    <div className="container col-4">
+    <div className="container col-3">
       <form className="px-4 py-3">
         <div className="form-group">
           <h2>Add new person</h2>
@@ -41,7 +41,7 @@ function Create({ create }) {
             <input
               className="form-control"
               type="text"
-              id="firstname"
+  
               value={inputs.firstname}
               onChange={(e) =>  formControl(e, "firstname")}
               // placeholder="Enter firstname"
@@ -54,7 +54,7 @@ function Create({ create }) {
             <input
               className="form-control"
               type="text"
-              id="surname"
+             
               value={inputs.surname}
               onChange={(e) =>  formControl(e, "surname")}
               // placeholder="Enter surname"
@@ -67,7 +67,7 @@ function Create({ create }) {
             <input
               className="form-control"
               type="text"
-              id="address"
+             
               value={inputs.address}
               onChange={(e) =>  formControl(e, "address")}
               // placeholder="Enter address"
@@ -81,7 +81,7 @@ function Create({ create }) {
             <input
               className="form-control"
               type="text"
-              id="phone_no"
+              
               value={inputs.phone_no}
               onChange={(e) =>  formControl(e, "phone_no")}
               // placeholder="Enter phone_no"
@@ -94,7 +94,7 @@ function Create({ create }) {
             <input
               className="form-control"
               type="text"
-              id="email"
+           
               value={inputs.email}
               onChange={(e) =>  formControl(e, "email")}
               // placeholder="Enter email"
@@ -107,7 +107,7 @@ function Create({ create }) {
             <input
               className="form-control"
               type="text"
-              id="salary"
+             
               value={inputs.salary}
               onChange={(e) =>  formControl(e, "salary")}
               // placeholder="Enter salary"
@@ -120,7 +120,7 @@ function Create({ create }) {
             <input
               className="form-control"
               type="date"
-              id="started_work"
+             
               value={inputs.started_work.slice(0, 10)}
               onChange={(e) =>  formControl(e, "started_work")}
               // placeholder="Enter started work"
