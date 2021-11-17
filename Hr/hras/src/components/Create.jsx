@@ -19,18 +19,18 @@ function Create({ create }) {
   const handleCreate = () => {
     create(inputs);
     setInputs({
-      firstname: "inputs.firstname",
-      surname: "inputs.surname,",
-      address: "inputs.address",
-      phone_no: "inputs.phone_no",
-      email: "inputs.email",
-      salary: "inputs.salary",
-      started_work: "inputs.started_work",
+      firstname: inputs.firstname,
+      surname: inputs.surname,
+      address: inputs.address,
+      phone_no: inputs.phone_no,
+      email: inputs.email,
+      salary: inputs.salary,
+      started_work: inputs.started_work.slice(0, 10),
     });
   };
 
   return (
-    <div className="menu">
+    <div className="form">
       <form className="px-4 py-3">
         <div className="form-group">
           <h2>Add new person</h2>
@@ -107,7 +107,7 @@ function Create({ create }) {
             <input
               className="form-control"
               type="text"
-              id="phone_no,"
+              id="salary"
               value={inputs.salary}
               onChange={(e) =>  formControl(e, "salary")}
               placeholder="Enter salary"
@@ -119,16 +119,16 @@ function Create({ create }) {
             </label>
             <input
               className="form-control"
-              type="text"
+              type="date"
               id="started_work"
-              value={inputs.started_work}
+              value={inputs.started_work.slice(0, 10)}
               onChange={(e) =>  formControl(e, "started_work")}
-              placeholder="Enter started_work"
+              placeholder="Enter started work"
             />
           </div>
 
           <div >
-            <button className="btn btn-primary"onClick={handleCreate}>Add</button>
+            <button className="btn btn-primary" onClick={handleCreate}>Add</button>
           </div>
         </div>
       </form>
