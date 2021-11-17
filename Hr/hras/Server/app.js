@@ -40,7 +40,7 @@ app.post('/duomenys', (req, res) => {
     const sql = `
         INSERT INTO duomenys
         (firstname, surname, address, phone_no, email, salary, started_work)
-        VALUES (?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
     `;
     con.query(sql, [
         req.body.firstname,

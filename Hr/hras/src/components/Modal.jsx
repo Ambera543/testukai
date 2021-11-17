@@ -25,7 +25,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
       phone_no: modalInputs.phone_no,
       email: modalInputs.email,
       salary: modalInputs.salary,
-      started_work: modalInputs.started_work,
+      started_work: modalInputs.started_work.slice(0, 10),
     });
   }, [modalInputs]);
 
@@ -38,7 +38,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
         phone_no: inputs.phone_no,
         email: inputs.email,
         salary: inputs.salary,
-        started_work: inputs,
+        started_work: inputs.started_work.slice(0, 10),
       },
       modalInputs.id
     );
@@ -136,7 +136,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                   className="form-control"
                   type="text"
                   id="email"
-                  value={inputs.phone_no}
+                  value={inputs.email}
                   onChange={(e) => control(e, "email")}
                   placeholder="Enter email"
                 />
@@ -160,7 +160,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                 </label>
                 <input
                   className="form-control"
-                  type="text"
+                  type="date"
                   id="started_work"
                   value={inputs.started_work.slice(0, 10)}
                   onChange={(e) => control(e, "started_work")}
@@ -168,7 +168,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                 />
               </div>
 
-              <div class="modal-footer">
+              <div className="modal-footer">
                 <button
                   type="button"
                   className="btn btn-secondary"

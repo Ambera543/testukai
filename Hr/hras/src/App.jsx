@@ -20,9 +20,9 @@ function App() {
   });
 
 
- const reset = () => {
-    setLastUpdate(Date.now());
-}
+//  const reset = () => {
+//     setLastUpdate(Date.now());
+// }
 
 //Read React
   useEffect(() => {
@@ -54,14 +54,22 @@ const create = zmogus => {
     .catch((err)=> console.log(err));
 }
 
-  const modal = (item) => {
+  const modal = (zmogus) => {
     setShowModal(true);
-    setModalInputs(item);
+    setModalInputs(zmogus);
   };
 
   const hide = () => {
     setShowModal(false);
   };
+  const remove = (id)=>{
+    axios.delete('http://localhost:3003/duomenys/' + id)
+    .then(res => {
+      setLastUpdate(Date.now());
+  })
+  .catch((err)=> console.log(err));
+}
+  
   
   return (
     <div className="App">
@@ -89,13 +97,13 @@ const create = zmogus => {
                     hide={hide}
                     edit={edit}
                   />
-                  <List table={table} modal={modal} />
+                  <List table={table} remove={remove} modal={modal} />
                 </table>
               </div>
             </div>
           </div>
         </div>
-        <Create></Create>
+        <Create className="row justify-content-right" create={create}></Create>
       </div>
     </div>
   );
