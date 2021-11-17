@@ -1,9 +1,10 @@
-import "./App.css";
+import "./App.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import List from "./components/List";
 import Modal from "./components/Modal";
-import Create from "./components/Create"
+import Create from "./components/Create";
+import NavBar from "./components/NavBar";
 
 function App() {
   const [table, setTable] = useState([]);
@@ -16,15 +17,23 @@ function App() {
     phone_no: "",
     email: "",
     salary: "",
-    started_work: ""
+    started_work: "",
   });
 
+   const reset = () => {
+    setLastUpdate(Date.now());
+  };
+  const dateOnly = (data) => {
+    return data.map((a) => {
+      a.last_received = a.started_work.slice(0, 10);
+      return a;
+    });
+  };
 
-//  const reset = () => {
-//     setLastUpdate(Date.now());
-// }
+  const [filterBy, setFilterBy] = useState("");
+  const [searchBy, setSearchBy] = useState("");
 
-//Read React
+  //Read React
   useEffect(() => {
     axios
       .get("http://localhost:3003/duomenys")
@@ -34,25 +43,51 @@ function App() {
       .catch((err) => console.log(err));
   }, [lastUpdate]);
 
-const create = zmogus => {
-    axios.post('http://localhost:3003/duomenys', zmogus)
-        .then(() => {
-            setLastUpdate(Date.now());
+  const create = (zmogus) => {
+    axios
+      .post("http://localhost:3003/duomenys", zmogus)
+      .then(() => {
+        setLastUpdate(Date.now());
+      })
+      .catch((err) => console.log(err));
+  };
+  useEffect(() => {
+    if (filterBy) {
+      if (filterBy === "all") {
+        reset();
+      }
+      axios
+        .get("http://localhost:3003/duomenys-filter/" + filterBy)
+        .then((res) => {
+          setTable(dateOnly(res.data));
         })
         .catch((err) => console.log(err));
-}
+    }
+  }, [filterBy]);
 
+  useEffect(() => {
+    if (searchBy) {
+      axios
+        .get("http://localhost:3003/duomenys-surname/?s=" + searchBy)
+        .then((res) => {
+          setTable(res.data);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [searchBy]);
 
-
-//Update React
+  //Update React
   const edit = (zmogus, id) => {
     setShowModal(false);
-    axios.put('http://localhost:3003/duomenys/' + id, zmogus)
-    .then(res => {
+    axios
+      .put("http://localhost:3003/duomenys/" + id, zmogus)
+      .then((res) => {
         setLastUpdate(Date.now());
-    })
-    .catch((err)=> console.log(err));
-}
+      })
+      .catch((err) => console.log(err));
+  };
+
+ 
 
   const modal = (zmogus) => {
     setShowModal(true);
@@ -62,53 +97,62 @@ const create = zmogus => {
   const hide = () => {
     setShowModal(false);
   };
-  const remove = (id)=>{
-    axios.delete('http://localhost:3003/duomenys/' + id)
-    .then(res => {
-      setLastUpdate(Date.now());
-  })
-  .catch((err)=> console.log(err));
-}
-  
-  
+  const remove = (id) => {
+    axios
+      .delete("http://localhost:3003/duomenys/" + id)
+      .then((res) => {
+        setLastUpdate(Date.now());
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
-    <div className="App">
-      <div className="container">
-        <div className="row justify-content-left float-left">
-          <div className="col-md-12">
-            <div className="card">
-              <div className="card-header">List of People</div>
-              <div className="card-body">
-                <table className="table">
-                  <tbody>
-                  <tr>
-                    <th>Firstname</th>
-                    <th>Surname</th>
-                    <th>Address</th>
-                    <th>Phone no.</th>
-                    <th>Email</th>
-                    <th>Salary</th>
-                    <th>Started work</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                  </tr>
-                 
-                  <List table={table} remove={remove} modal={modal} />
-                  </tbody>
-                </table>
-                <Modal
-                    showModal={showModal}
-                    modalInputs={modalInputs}
-                    hide={hide}
-                    edit={edit}
-                  />
-              </div>
-            </div>
+    <div className="App bg-light">
+      <NavBar 
+          table={table}
+          search={setSearchBy}
+          filter={setFilterBy}
+          // sort={setSortBy}
+          reset={reset}
+        ></NavBar>
+      <div className="float-container">
+        <div className="justify-content-center">
+          <div className="float-child">
+            <div className="card-header">List of People</div>
+
+            <table className="table">
+              <tbody>
+                <tr>
+                  <th>Firstname</th>
+                  <th>Surname</th>
+                  <th>Address</th>
+                  <th>Phone no.</th>
+                  <th>Email</th>
+                  <th>Salary</th>
+                  <th>Started work</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+
+                <List table={table} remove={remove} modal={modal} />
+              </tbody>
+            </table>
+            <Modal
+              showModal={showModal}
+              modalInputs={modalInputs}
+              hide={hide}
+              edit={edit}
+            />
           </div>
         </div>
-        <Create className="row justify-content-right" create={create}></Create>
+        <div className="float-child green">
+          <Create
+            className="justify-content-center"
+            create={create}
+          ></Create>
+        </div>
       </div>
-    </div>
+     </div>
   );
 }
 

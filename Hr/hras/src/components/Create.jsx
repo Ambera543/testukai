@@ -8,7 +8,7 @@ function Create({ create }) {
     phone_no: "",
     email: "",
     salary: "",
-    started_work: ""
+    started_work: "",
   });
 
   const formControl = (e, what) => {
@@ -30,105 +30,86 @@ function Create({ create }) {
   };
 
   return (
-    <div className="container col-3">
-      <form className="px-4 py-3">
+    <div className="row col-3">
+      <form className="px-2">
         <div className="form-group">
           <h2>Add new person</h2>
           <div className="form-group">
-            <label className="col-form-label">
-              Firstname
-            </label>
+            <label className="form-label">Firstname</label>
             <input
               className="form-control"
               type="text"
-  
               value={inputs.firstname}
-              onChange={(e) =>  formControl(e, "firstname")}
+              onChange={(e) => formControl(e, "firstname")}
               // placeholder="Enter firstname"
             />
           </div>
           <div className="form-group">
-            <label className="col-form-label">
-              Surname
-            </label>
+            <label className="form-label">Surname</label>
             <input
               className="form-control"
               type="text"
-             
               value={inputs.surname}
-              onChange={(e) =>  formControl(e, "surname")}
+              onChange={(e) => formControl(e, "surname")}
               // placeholder="Enter surname"
             />
           </div>
           <div className="form-group">
-            <label className="col-form-label">
-              Address
-            </label>
+            <label className="form-label">Address</label>
             <input
               className="form-control"
               type="text"
-             
               value={inputs.address}
-              onChange={(e) =>  formControl(e, "address")}
+              onChange={(e) => formControl(e, "address")}
               // placeholder="Enter address"
             />
           </div>
 
           <div className="form-group">
-            <label className="col-form-label">
-              Phone no.
-            </label>
+            <label className="form-label">Phone no.</label>
             <input
               className="form-control"
-              type="text"
-              
+              type="tel"
               value={inputs.phone_no}
-              onChange={(e) =>  formControl(e, "phone_no")}
+              onChange={(e) => formControl(e, "phone_no")}
               // placeholder="Enter phone_no"
             />
           </div>
           <div className="form-group">
-            <label className="col-form-label">
-              Email
-            </label>
+            <label className="form-label">Email</label>
             <input
               className="form-control"
-              type="text"
-           
+              type="email"
               value={inputs.email}
-              onChange={(e) =>  formControl(e, "email")}
+              onChange={(e) => formControl(e, "email")}
               // placeholder="Enter email"
             />
           </div>
           <div className="form-group">
-            <label className="col-form-label">
-              Salary
-            </label>
+            <label className="form-label">Salary</label>
             <input
               className="form-control"
               type="text"
-             
               value={inputs.salary}
-              onChange={(e) =>  formControl(e, "salary")}
+              onChange={(e) => formControl(e, "salary")}
               // placeholder="Enter salary"
             />
           </div>
           <div className="form-group">
-            <label className="col-form-label">
-              Started work
-            </label>
+            <label className="form-label">Started work</label>
             <input
               className="form-control"
               type="date"
-             
               value={inputs.started_work.slice(0, 10)}
-              onChange={(e) =>  formControl(e, "started_work")}
+              onChange={(e) => formControl(e, "started_work")}
               // placeholder="Enter started work"
             />
           </div>
 
-          <div >
-            <button className="btn btn-primary" onClick={handleCreate}>Add</button>
+          <div>
+            <button className="btn btn-primary" onClick={handleCreate}>
+              Add
+            </button>
           </div>
         </div>
       </form>
