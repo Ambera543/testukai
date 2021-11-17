@@ -1,11 +1,10 @@
 import { useReducer } from 'react';
-import { addLeft, addRight } from '../../Action/domino';
-import { dominoPlateReducer, startPost } from '../../Reducer/dominoReducer';
-
+import { addLeft, addRight, resetLeftRight } from '../../Action/domino';
+import { dominoPlateReducer, startPos } from '../../Reducer/dominoReducer';
 
 
 function Create({create}) {
-    const [plate, dispachPlate] = useReducer(dominoPlateReducer,  startPos);
+    const [plate, dispachPlate] = useReducer(dominoPlateReducer, startPos);
 
     const handleInput = (e, P) => {
         if ('L' === P) {
@@ -25,11 +24,11 @@ function Create({create}) {
     }
 
     return (
-        <div className="domino_create">
-            <div className="domino_create_header">
+        <div className="domino__create">
+            <div className="domino__create__header">
                 Create new DOMINO plate
             </div>
-            <div className="domino_create_body">
+            <div className="domino__create__body">
                 <div>
                 <input type="text" style={{
                     backgroundColor: plate.leftErr ? 'deeppink' : 'white'

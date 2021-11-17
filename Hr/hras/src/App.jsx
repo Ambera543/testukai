@@ -80,6 +80,7 @@ const create = zmogus => {
               <div className="card-header">List of People</div>
               <div className="card-body">
                 <table className="table">
+                  <tbody>
                   <tr>
                     <th> Firstname</th>
                     <th>Surname</th>
@@ -91,14 +92,16 @@ const create = zmogus => {
                     <th>Edit</th>
                     <th>Delete</th>
                   </tr>
-                  <Modal
+                 
+                  <List table={table} remove={remove} modal={modal} />
+                  </tbody>
+                </table>
+                <Modal
                     showModal={showModal}
                     modalInputs={modalInputs}
                     hide={hide}
                     edit={edit}
                   />
-                  <List table={table} remove={remove} modal={modal} />
-                </table>
               </div>
             </div>
           </div>

@@ -30,12 +30,12 @@ function Create({ create }) {
   };
 
   return (
-    <div className="form">
+    <div className="container col-4">
       <form className="px-4 py-3">
         <div className="form-group">
           <h2>Add new person</h2>
           <div className="form-group">
-            <label for="firstname" className="col-form-label">
+            <label className="col-form-label">
               Firstname
             </label>
             <input
@@ -44,11 +44,11 @@ function Create({ create }) {
               id="firstname"
               value={inputs.firstname}
               onChange={(e) =>  formControl(e, "firstname")}
-              placeholder="Enter firstname"
+              // placeholder="Enter firstname"
             />
           </div>
           <div className="form-group">
-            <label for="surname" className="col-form-label">
+            <label className="col-form-label">
               Surname
             </label>
             <input
@@ -57,11 +57,11 @@ function Create({ create }) {
               id="surname"
               value={inputs.surname}
               onChange={(e) =>  formControl(e, "surname")}
-              placeholder="Enter surname"
+              // placeholder="Enter surname"
             />
           </div>
           <div className="form-group">
-            <label for="address" className="col-form-label">
+            <label className="col-form-label">
               Address
             </label>
             <input
@@ -70,12 +70,12 @@ function Create({ create }) {
               id="address"
               value={inputs.address}
               onChange={(e) =>  formControl(e, "address")}
-              placeholder="Enter address"
+              // placeholder="Enter address"
             />
           </div>
 
           <div className="form-group">
-            <label for="phone_no" className="col-form-label">
+            <label className="col-form-label">
               Phone no.
             </label>
             <input
@@ -84,11 +84,11 @@ function Create({ create }) {
               id="phone_no"
               value={inputs.phone_no}
               onChange={(e) =>  formControl(e, "phone_no")}
-              placeholder="Enter phone_no"
+              // placeholder="Enter phone_no"
             />
           </div>
           <div className="form-group">
-            <label for="email" className="col-form-label">
+            <label className="col-form-label">
               Email
             </label>
             <input
@@ -97,11 +97,11 @@ function Create({ create }) {
               id="email"
               value={inputs.email}
               onChange={(e) =>  formControl(e, "email")}
-              placeholder="Enter email"
+              // placeholder="Enter email"
             />
           </div>
           <div className="form-group">
-            <label for="salary" className="col-form-label">
+            <label className="col-form-label">
               Salary
             </label>
             <input
@@ -110,11 +110,11 @@ function Create({ create }) {
               id="salary"
               value={inputs.salary}
               onChange={(e) =>  formControl(e, "salary")}
-              placeholder="Enter salary"
+              // placeholder="Enter salary"
             />
           </div>
           <div className="form-group">
-            <label for="started_work" className="col-form-label">
+            <label className="col-form-label">
               Started work
             </label>
             <input
@@ -123,7 +123,7 @@ function Create({ create }) {
               id="started_work"
               value={inputs.started_work.slice(0, 10)}
               onChange={(e) =>  formControl(e, "started_work")}
-              placeholder="Enter started work"
+              // placeholder="Enter started work"
             />
           </div>
 

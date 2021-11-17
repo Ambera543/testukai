@@ -48,7 +48,6 @@ function Modal({ showModal, hide, modalInputs, edit }) {
     <div
       className="modal fade"
       id="exampleModal"
-      tabindex="-1"
       role="dialog"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
@@ -76,7 +75,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
           <div className="modal-body">
             <form>
               <div className="form-group">
-                <label for="firstname" className="col-form-label">
+                <label className="col-form-label">
                   Firstname
                 </label>
                 <input
@@ -89,7 +88,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                 />
               </div>
               <div className="form-group">
-                <label for="surname" className="col-form-label">
+                <label className="col-form-label">
                   Surname
                 </label>
                 <input
@@ -102,7 +101,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                 />
               </div>
               <div className="form-group">
-                <label for="address" className="col-form-label">
+                <label className="col-form-label">
                   Address
                 </label>
                 <input
@@ -116,7 +115,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
               </div>
 
               <div className="form-group">
-                <label for="phone_no" className="col-form-label">
+                <label className="col-form-label">
                   Phone no.
                 </label>
                 <input
@@ -129,7 +128,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                 />
               </div>
               <div className="form-group">
-                <label for="email" className="col-form-label">
+                <label  className="col-form-label">
                   Email
                 </label>
                 <input
@@ -142,7 +141,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                 />
               </div>
               <div className="form-group">
-                <label for="salary" className="col-form-label">
+                <label className="col-form-label">
                   Salary
                 </label>
                 <input
@@ -155,7 +154,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
                 />
               </div>
               <div className="form-group">
-                <label for="started_work" className="col-form-label">
+                <label className="col-form-label">
                   Started work
                 </label>
                 <input
