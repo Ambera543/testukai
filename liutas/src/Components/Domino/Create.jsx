@@ -24,11 +24,11 @@ function Create({create}) {
     }
 
     return (
-        <div className="domino__create">
-            <div className="domino__create__header">
+        <div className="domino_create">
+            <div className="domino_create_header">
                 Create new DOMINO plate
             </div>
-            <div className="domino__create__body">
+            <div className="domino_create_body">
                 <div>
                 <input type="text" style={{
                     backgroundColor: plate.leftErr ? 'deeppink' : 'white'

@@ -35,7 +35,7 @@ body {
   margin: 20px;
 }
 
-h1.a {
+.h1.a {
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -80,7 +80,7 @@ h1.a {
   display: none;
 }
 
-button {
+.button {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -419,12 +419,12 @@ h1 {
           justify-content: center;
           align-items: center;
           &_ok {
-              width: 40px;
+              width: 30px;
               font-size: 10px;
               border: 1px solid lightgreen;
               text-align: center;
               cursor: pointer;
-              padding: 5px;
+              padding: 0px;
               margin-top: 5px;
               color: lightgreen;
               border-radius: 4px;
@@ -435,7 +435,7 @@ h1 {
               border: 1px solid red;
               text-align: center;
               cursor: pointer;
-              padding: 5px;
+              padding: 0px;
               margin-top: 5px;
               margin-left: 10px;
               color: red;
@@ -449,6 +449,7 @@ h1 {
       align-items: center;
       flex-wrap: wrap;
       width: 70%;
+      padding: auto;
   }
   &_msg {
       background-color: deeppink;

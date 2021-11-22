@@ -33,22 +33,26 @@ export function dominosReducer(state, action) {
             newState[i].right = parseInt(action.payload.right);
             localStorage.setItem('dominos', JSON.stringify(newState));
             break;
-            case GET_DOMINOS:
-                newState = action.payload;
-                break;
-            case ADD_DOMINO:
-                action.payload.id = idGenerator('dominoId');
-                newState.push(action.payload);
-                localStorage.setItem('dominos', JSON.stringify(newState));
-                break;
-            default:
-                newState = state;
-    
-        }
-        return newState
-    
+        case GET_DOMINOS:
+            const dominos = localStorage.getItem('dominos');
+            if (null === dominos) {
+                newState = [];
+            } else {
+                newState = JSON.parse(dominos);
+            }
+            break;
+        case ADD_DOMINO:
+            action.payload.id = idGenerator('dominoId');
+            newState.push(action.payload);
+            localStorage.setItem('dominos', JSON.stringify(newState));
+            break;
+        default:
+            newState = state;
+
     }
-   
+    return newState
+
+}
 
 export const startPos = {
     left: 0,

@@ -22,3 +22,4 @@ function Plate({plate, editDots, selectEdit, del, change, save}) {
 }
 
 export default Plate;
+
