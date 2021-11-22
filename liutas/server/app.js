@@ -202,6 +202,33 @@ app.get('/group-stat', (req, res) => {
 })
 
 
+app.get('/domino', (req, res) => {
+    const sql = `
+        SELECT *
+        FROM domino
+    `;
+    con.query(sql, (err, results) => {
+        if (err) {
+            throw err;
+        }
+        res.send(results);
+    })
+})
+
+// Visi dominai
+app.get('/dominos', (req, res) => {
+    const sql = `
+        SELECT *
+        FROM dominos
+    `;
+    con.query(sql, (err, results) => {
+        if (err) {
+            throw err;
+        }
+        res.send(results);
+    })
+})
+
 
 
 //     con.query(sql, (err, results) => {

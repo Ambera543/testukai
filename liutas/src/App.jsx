@@ -1,9 +1,9 @@
 import { useEffect, useReducer, useState } from "react";
-import { addDomino, delDomino, getDominos, hideMessage, showMessage, updateDomino } from "./Action/domino";
+import { addDomino, delDomino, getDominos, hideMessage, showMessage, updateDomino } from "./Actions/domino";
 import Create from "./Components/Domino/Create";
 import Message from "./Components/Domino/Message";
 import Plate from "./Components/Domino/Plate";
-import { dominosReducer, messageReducer } from "./Reducer/dominoReducer";
+import { dominosReducer, messageReducer } from "./Reducers/dominoReducerLocal";
 
 function App() {
 
@@ -68,7 +68,7 @@ function App() {
         <div className="domino">
             <h1>Domino</h1>
             <Create create={create}></Create>
-            <div className="domino_table">
+            <div className="domino__table">
                 {
                     dominos.map(p => <Plate
                         key={p.id}
@@ -89,3 +89,33 @@ function App() {
 
 
 export default App;
+
+
+// function App{
+
+//     return (
+//         <div className="domino">
+//             <h1>Domino</h1>
+//             <Create create={create}></Create>
+//             <div className="domino_table">
+//                 {
+//                     dominos.map(p => <Plate
+//                         key={p.id}
+//                         plate={p}
+//                         change={change}
+//                         save={save}
+//                         editDots={editDots}
+//                         selectEdit={selectEdit}
+//                         del={deleteDomino}
+//                     ></Plate>)
+//                 }
+//             </div>
+
+//             <Message msg={message}></Message>
+//         </div>
+//     )
+// }
+
+
+// export default App;
+// }
