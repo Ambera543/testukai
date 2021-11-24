@@ -139,6 +139,21 @@ app.get("/stats", (req, res) => {
     });
   });
 
+//   // Count l
+// app.get('/cow_farm/milk', (req, res) => {
+//     const sql = `
+//   SELECT SUM(total_milk+milk) as milki
+//   FROM scooters
+//   `;
+//     // console.log(req.query.s);
+//     con.query(sql, ['%' + req.query.s + '%'], (err, results) => {
+//       if (err) {
+//         throw err;
+//       }
+//       res.send(results);
+//     })
+//   })
+
 app.listen(port, () => {
 //   console.log(`Example app listening at http://localhost:${port}`);
 });

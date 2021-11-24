@@ -87,6 +87,14 @@ function App() {
       setTable(sortas(table, sortBy));
     }
   }, [sortBy]);
+  // const [milki, setMilki] = useState([]);
+
+  // useEffect(() => {
+  //   axios.get('http://localhost:3003/milk')
+  //     .then(res => {
+  //       setMilki(res.data[0].milki);
+  //     })
+  // }, [lastUpdate])
 
   const modal = (item) => {
     setShowModal(true);
