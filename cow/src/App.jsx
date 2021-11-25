@@ -47,7 +47,7 @@ function App() {
   //Read React
   useEffect(() => {
     axios
-      .get("http://localhost:3003/cow_farm")
+      .get("http://localhost:3003/cow-farm")
       .then((res) => {
         setTable(res.data);
       })
@@ -56,19 +56,19 @@ function App() {
 
   const create = (item) => {
     axios
-      .post("http://localhost:3003/cow_farm", item)
+      .post("http://localhost:3003/cow-farm", item)
       .then(() => {
         addMsg("Record successfully saved.");
         setLastUpdate(Date.now());
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err, addMsg("something wrong")));
   };
 
   //Update React
   const edit = (item, id) => {
     setShowModal(false);
     axios
-      .put("http://localhost:3003/cow_farm/" + id, item)
+      .put("http://localhost:3003/cow-farm/" + id, item)
       .then((res) => {
         addMsg("Record was edited successfully.");
         setLastUpdate(Date.now());
@@ -87,14 +87,6 @@ function App() {
       setTable(sortas(table, sortBy));
     }
   }, [sortBy]);
-  // const [milki, setMilki] = useState([]);
-
-  // useEffect(() => {
-  //   axios.get('http://localhost:3003/milk')
-  //     .then(res => {
-  //       setMilki(res.data[0].milki);
-  //     })
-  // }, [lastUpdate])
 
   const modal = (item) => {
     setShowModal(true);
@@ -107,12 +99,12 @@ function App() {
 
   const remove = (id) => {
     axios
-      .delete("http://localhost:3003/cow_farm/" + id)
+      .delete("http://localhost:3003/cow-farm/" + id)
       .then((res) => {
         addMsg("Record was deleted successfully");
         setLastUpdate(Date.now());
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err, addMsg("something wrong")));
   };
 
   return (
