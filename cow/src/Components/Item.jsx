@@ -21,7 +21,7 @@ function Item({ data, modal, remove }) {
         <td>{data.name}</td>
         <td>{data.weight}</td>
         <td>{data.milk}</td>
-        <td>{data.total_milk}</td>
+        <td>{data.total_milk+data.milk}</td>
         <td>{data.last_milking_time.slice(0, 10)}</td>
     <td>
         <button className="btn btn-primary" onClick={showEdit}>

@@ -69,7 +69,7 @@ app.put('/cow_farm/:id', (req, res) => {
         req.body.name,
         req.body.weight,
         req.body.milk,
-        // req.body.total_milk,
+         req.body.total_milk,
         req.body.last_milking_time,
         req.params.id
     ], (err, results) => {
@@ -139,20 +139,20 @@ app.get("/stats", (req, res) => {
     });
   });
 
-//   // Count l
-// app.get('/cow_farm/milk', (req, res) => {
-//     const sql = `
-//   SELECT SUM(total_milk+milk) as milki
-//   FROM scooters
-//   `;
-//     // console.log(req.query.s);
-//     con.query(sql, ['%' + req.query.s + '%'], (err, results) => {
-//       if (err) {
-//         throw err;
-//       }
-//       res.send(results);
-//     })
-//   })
+  // Count l
+app.get('/cow_farm/milk', (req, res) => {
+    const sql = `
+  SELECT SUM(total_milk) as milki
+  FROM cow_farm
+  `;
+    // console.log(req.query.s);
+    con.query(sql, ['%' + req.query.s + '%'], (err, results) => {
+      if (err) {
+        throw err;
+      }
+      res.send(results);
+    })
+  })
 
 app.listen(port, () => {
 //   console.log(`Example app listening at http://localhost:${port}`);
