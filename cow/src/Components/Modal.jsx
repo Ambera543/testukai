@@ -19,7 +19,7 @@ function Modal({ showModal, hide, modalInputs, edit }) {
     setInputs({
       name: modalInputs.name,
       weight: modalInputs.weight,
-      milk: modalInputs.milk,
+      milk: 0,
       total_milk: modalInputs.total_milk,
       last_milking_time: modalInputs.last_milking_time.slice(0, 10),
     });

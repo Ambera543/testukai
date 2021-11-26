@@ -14,8 +14,32 @@ function Create({ create }) {
     inputsCopy[what] = e.target.value;
     setInputs(inputsCopy);
   };
+
   const handleCreate = (e) => {
     e.preventDefault();
+   if 
+     (inputs.name === "" ) {
+        alert("Please fill out name field")
+        return;
+      }
+      if 
+     (inputs.weight === "" ) {
+        alert("Please fill out weight field")
+        return;
+      }
+
+      if 
+      (inputs.milk === "" ) {
+         alert("Please fill out milk field")
+         return;
+       }
+
+       if 
+       (inputs.last_milking_time === "" ) {
+          alert("Please fill out date field")
+          return;
+        }
+
     create(inputs);
     setInputs({
       name: "",
@@ -25,6 +49,7 @@ function Create({ create }) {
       last_milking_time: "",
     });
   };
+
   console.log(handleCreate);
   // oninput="this.setCustomValidity('')"
 
@@ -46,6 +71,7 @@ function Create({ create }) {
             <div>Weight </div>
             <input
               type="number"
+              //  onInvalid="alert('You must fill out the form!');"
               required
               value={inputs.weight}
               onChange={(e) => formControl(e, "weight")}

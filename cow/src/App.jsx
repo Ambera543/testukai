@@ -43,6 +43,7 @@ function App() {
   const reset = () => {
     setLastUpdate(Date.now());
   };
+  // const [error, setError] = useState('');
 
   //Read React
   useEffect(() => {
@@ -126,7 +127,7 @@ function App() {
           </div>
         </div>
         <div className="float-child green">
-          <Create className="justify-content-center" create={create}></Create>
+          <Create className="justify-content-center" create={create} ></Create>
         </div>
       </div>
     </div>
@@ -134,3 +135,4 @@ function App() {
 }
 
 export default App;
+// error={error} setError={setError}
